@@ -1,0 +1,25 @@
+.noData {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.noDataButton {
+    transition: 0.2s;
+    background-color: #dd3333;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.3rem 0.5rem 0.3rem 0.2rem;
+    font-size: .875rem;
+    cursor: pointer;
+}
+.noDataButton svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+}
+.noDataButton:hover {
+    background-color: #FF5C58;
+}

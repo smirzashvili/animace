@@ -1,0 +1,117 @@
+.commentsArea {
+    margin: 10px 0px;
+}
+.cancelReply {
+    margin-left: 4px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.cancelReply:hover {
+    opacity: 0.8;
+}
+.CommentsHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -10px;
+}
+.Comment {
+    display: flex;
+    gap: 35px;
+    padding: 15px 0px;
+}
+.Comment img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.CommentArea {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    background-color: #f8f7ff;    
+    width: 100%;
+    height: auto;
+    padding: 15px 15px;
+    border-radius: 0.5rem;
+    padding-bottom: 30px;
+}
+.CommentArea button {
+    width: 55px;
+    height: 30px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    background-color: #dd3333;
+    border: none;
+    transition: .2s ease-in-out;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.CommentArea button:hover {
+    background-color: #FF5C58;
+}
+
+.CommentArea div:nth-child(1) {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.CommentArea div:last-child {
+    font-weight: 400;
+    opacity: 0.9;
+}
+.postButt {
+    height: 40px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    background-color: #dd3333;
+    border: none;
+    transition: .2s ease-in-out;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 15px;
+}
+.postButt:hover {
+    background-color: #FF5C58;
+}
+.leaveReplyHeader {
+    margin-top: -10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.leaveReplyWarner {
+    padding: 10px 0px;
+}
+.leaveReplyInput, .leaveReplyTextarea {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    font-size: 15px;
+    color: #69717a;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 1.2em;
+    margin-top: 5px;
+    transition: box-shadow 0.3s ease;
+    background-color: #F1F1F1; 
+}
+.leaveReplyInput:focus, .leaveReplyTextarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+}
+.leaveReplyTextarea {
+    height: 200px;
+    resize: vertical;
+}
+.nameAndEmailArea {
+    display: flex;
+    gap: 1.2em;
+}
+.nameAndEmailArea div {
+    width: 100%;
+}
+.leaveReplyArea {
+    margin-bottom: 50px;
+}
+.error {
+    margin-bottom: 10px;
+    color: red;
+}

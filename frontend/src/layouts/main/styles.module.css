@@ -1,0 +1,24 @@
+.layout {
+  padding-top: 85px;
+  margin-bottom: 15px; 
+  padding-right: 2.3rem; 
+  padding-left: 2.3rem;
+  min-height: calc(100vh - 15px);
+}
+.scrollButton {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  width: 34px;
+  height: 34px;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+  background-color: unset;
+  color: transparent;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: unset;
+}
+  

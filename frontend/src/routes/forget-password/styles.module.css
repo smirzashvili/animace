@@ -1,0 +1,110 @@
+.line {
+    height: 1px;
+    background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
+    opacity: .1;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.title {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.form {
+    width: 400px;
+    box-shadow: 0 0 0 0.5px rgb(0 20 40 / 10%), 0 2px 8px 0 rgb(50 55 90 / 20%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.form input {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+    color: #69717a;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    transition: box-shadow 0.3s ease; 
+}
+.form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);;
+}
+.form button {
+    background: #dd3333;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 6px;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.form button:hover {
+    background: #FF5C58;
+    transition: all 0.2s ease-out;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
+    color: #444444;
+}
+.relative {
+    position: relative;
+}
+.relative svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: text;
+    margin: 10px 14px 0 0;
+    color: rgb(102, 102, 102)
+}
+.link {
+    display: flex;
+    justify-content: center;
+    color: #69717A;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 160px;
+}
+.link:hover {
+    text-decoration: underline;
+}
+.error {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 0px;
+    font-size: 17px;
+}
+.success {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 0px;
+    font-size: 17px;
+}

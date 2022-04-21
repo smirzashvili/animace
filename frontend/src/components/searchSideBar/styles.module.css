@@ -1,0 +1,33 @@
+.input {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    font-size: 15px;
+    color: #69717a;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 1.2em;
+    margin-top: 8px;
+    transition: box-shadow 0.3s ease; 
+}
+.input option {
+    padding: 0px;
+    font-size: 14px;
+}
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+}
+.label {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+.sticky select {
+    padding-left: 8px;
+    background-color: #F1F1F1;
+}
+.bottomImage {
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 5px
+}

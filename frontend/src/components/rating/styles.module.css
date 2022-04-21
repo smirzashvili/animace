@@ -1,0 +1,16 @@
+.small {
+    transform: translateX(-1px);
+}
+.small svg {
+    color: #FDC83E;
+    font-size: 17px;
+    margin-right: -1px;
+}
+.medium {
+    transform: translateX(-1px);
+}
+.medium svg {
+    color: #FDC83E;
+    font-size: 24px;
+    margin-right: 0px;
+}

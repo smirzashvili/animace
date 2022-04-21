@@ -1,0 +1,79 @@
+.line {
+    height: 1px;
+    background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
+    opacity: .1;
+    width: 100%;
+    margin: 15px 0px;
+}
+.title {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.1rem;
+    padding: 15px 0px;
+}
+.gridItem {
+   width: 100%;
+}
+.gridTextArea {
+    padding: 5px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.gridItem img {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    object-fit: cover;
+    transition: 0.2s;
+}
+.gridItem img:hover {
+    opacity: 0.8;
+}
+.gridItem p {
+    font-size: 11px;
+    font-weight: 400;
+}
+.gridTitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.gridTitle:hover {
+    opacity: 0.7;
+}
+.gridAuthor {
+    font-weight: 600;
+    cursor: pointer;
+}
+.gridAuthor:hover {
+    opacity: 0.8;
+}
+.buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.buttons button {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 6px 10px;
+    background-color: #dd3333;
+    border: none;
+    transition: .2s ease-in-out;
+    font-size: 14px;
+}
+.buttons button:hover {
+    background-color: #FF5C58;
+}
+.link {
+    margin-bottom: 8px;
+}

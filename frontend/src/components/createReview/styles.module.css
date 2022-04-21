@@ -1,0 +1,88 @@
+.review {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
+    padding: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    border-radius: 0.5rem;
+}
+form label {
+    padding-top: 10px;
+}
+.stars {
+    height: 16px;
+    padding: 0;
+    margin-bottom: 25px;
+    transform: translateX(-3px);
+}
+.stars svg {
+    font-size: 2rem;
+    margin-right: -1px;
+    cursor: pointer;
+}
+form input {
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    font-size: 15px;
+    color: #69717a;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    margin-top: 5px;
+    transition: box-shadow 0.3s ease; 
+}
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);;
+}
+form textarea {
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid #dbdbdb;
+    color: #69717a;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+    height: 120px;
+    margin-top: 5px;
+    margin-bottom: 1em;
+    resize: vertical;
+}
+form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+}
+.createComm {
+    margin-top: 5px;
+    background-color: #007bff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    border: none;
+    color: white;
+    height: 40px;
+    padding: 0px 15px;
+}
+.createComm:hover {
+    background-color: #0069D9;
+}
+.flex {
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.flex input {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px white!important; 
+    cursor: pointer;  
+}
+.flex label {
+    font-size: 13px;
+    cursor: pointer;
+}
+.error {
+    color: #e02424;
+    transform: translateY(-10px);
+}
