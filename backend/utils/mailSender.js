@@ -38,7 +38,7 @@ const mailSender = (email, username, url) => {
 
     transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
-            console.log(err);
+            console.log('erroriko',err, data);
         }
     });
 }

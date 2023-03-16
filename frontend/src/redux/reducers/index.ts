@@ -1,0 +1,13 @@
+export { default as UsersReducer } from './usersReducer';
+export { default as ActorsReducer } from './actorsReducer';
+export { default as CategoriesReducer } from './categoriesReducer';
+export { default as ArticlesReducer } from './articlesReducer';
+export { default as AuthorsReducer } from './authorsReducer';
+export { default as ReviewsReducer } from './reviewsReducer';
+export { default as MoviesReducer } from './moviesReducer';
+export { default as SeriesReducer } from './seriesReducer';
+export { default as MangasReducer } from './mangasReducer';
+export { default as GenresReducer } from './genresReducer';
+export { default as FiltersReducer } from './filtersReducer';
+export { default as StaffReducer } from './staffReducer';
+export { default as CommentsReducer } from './commentsReducer';

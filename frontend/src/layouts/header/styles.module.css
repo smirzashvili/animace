@@ -71,6 +71,10 @@
     margin-right: 10px;
     cursor: pointer;
 }
+.languageContainer {
+    cursor: pointer;
+    margin-right: 10px;
+}
 
 .menuButton {
     font-size: 25px;
@@ -221,7 +225,17 @@
     overflow-x: hidden;
     transition: .5s;
     width: 0px;
+    scrollbar-width: 60px;
 }
+
+.sideNav.darkMode {
+    background-color: #323232;
+}
+
+.sideNav::-webkit-scrollbar-thumb {
+    border-right: solid 1px #f1f1f1;
+}
+
 .closeButton {
     font-size: 18px;
     margin-right: 3px;

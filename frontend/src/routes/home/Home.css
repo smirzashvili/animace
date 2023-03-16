@@ -246,6 +246,11 @@
   font-size: 19px;
   font-weight: 700;
 }
+
+.reviewsText:hover {
+  opacity: 0.8;
+}
+
 .reviewsAuthor {
   margin-top: 10px;
   display: flex;
@@ -258,8 +263,16 @@
   align-items: center;
   cursor: pointer;
 }
+.reviewsAuthorPhoto a {
+  height: 36px;
+}
+.reviewsAuthorName:hover {
+  opacity: 0.8;
+}
 .reviewsAuthorPhoto img {
   border-radius: 50%;
+  width: 36px;
+  height: 36px;
 }
 .carousell3 {
   width: calc((200%/3) - 2rem); 
@@ -354,7 +367,7 @@
   
 }
 .seeAll:hover {
-  color: grey;
+  opacity: 0.8;
 }
 .moviesheaderText {
   font-weight: bold;
