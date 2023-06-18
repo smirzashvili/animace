@@ -4,7 +4,6 @@ const getSeries = async (req,res) => {
     try{
         const PAGE_SIZE = 12
         const page = parseInt(req.query.page || "0")
-        console.log(page)
         const series = await Serie.find().populate('genre').populate("actors")
         .sort({pathname: 1})
         .limit(PAGE_SIZE).skip(PAGE_SIZE * page)

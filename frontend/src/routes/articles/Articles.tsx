@@ -45,8 +45,7 @@ const Articles = () => {
         <h1 className={styles.title}>All News</h1>
         <div className={styles.line}></div>
         <div className={styles.grid}>
-          {articles?.map((item: IArticle) => {
-            console.log(item)
+          {articles?.map((item: IArticle, key: string) => {
             return (
               <div className={styles.gridItem}>
                 <a href={`articles/${item.pathname}`}>
@@ -65,7 +64,6 @@ const Articles = () => {
                   </div>
                   <div className={styles.buttons}>
                     {item.tag.map((item: ITag) => {
-                      console.log(item)
                       if(!item.type)
                       return(
                       <a href={`../tags/${transformToUrl(item.title)}`}>

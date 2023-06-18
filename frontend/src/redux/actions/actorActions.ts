@@ -5,7 +5,6 @@ import { Action, Dispatch } from 'redux';
 export const getActors = () => async (dispatch: Dispatch<Action>) => {
     try {
       const { data } = await api.fetchActors();
-      console.log(data)
       dispatch({ 
           type: GET_ACTORS, 
           payload: data

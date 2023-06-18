@@ -43,7 +43,6 @@ const ForgetPassword = () => {
         const res = await api.resetPasswordUser(state, token as string)
         dispatch(resetPasswordUser(state));
         res.data && navigate("/sign-in")
-        console.log(res)
     } catch (err) {
         axios.isAxiosError(err) && setError(err.response?.data.msg)
     }

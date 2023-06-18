@@ -223,7 +223,6 @@ if(notFound === true) {
                             <div className={styles.line1}></div>
                             {
                                 movieInfo.actors?.map((item: IActor) => {
-                                    console.log(movieInfo)
                                     return (
                                         <div className={styles.singleStaffAndCast}>
                                             <a href={`../../actors/${transformToUrl(item?.actor.fullName)}`}>

@@ -12,7 +12,6 @@ const getArticles = async (req,res) => {
         res.status(200).json({ totalPages: totalPages, articles })
     }
     catch (err){
-        console.log(err)
         res.status(500).json(err)
     }
 }
@@ -39,7 +38,6 @@ const getArticle = async (req,res) => {
 
         // console.log(article.comments)
     } catch (err) {
-        console.log(err.message)
         return res.status(500).json({msg: err.message})
     }
 }

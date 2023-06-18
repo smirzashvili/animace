@@ -51,7 +51,6 @@ const Actors = () => {
                         <div className={styles.grid}>
                             {
                             actors?.map((item: IActor) => {
-                                console.log(item)
                                 if(item.fullName.charAt(0) === letter) {
                                     return (
                                         <div className={styles.gridItem}>

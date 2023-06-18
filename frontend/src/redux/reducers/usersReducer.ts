@@ -56,7 +56,6 @@ const UsersReducer = (state=initialState, action: any) => {
         }
         // case UPDATE_TASK: 
         //     let post1 = state.posts.find(item => item._id === action.payload.postId)
-        //     console.log(post1)
         //     const taskToEdit = post1.tasks.find(item => item._id === action.payload.taskId)
         //     taskToEdit.fixed = action.payload.task.fixed
         // return {

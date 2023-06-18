@@ -62,7 +62,6 @@ const AuthorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
 
         <div className={styles.grid}>
             {data?.map((item: IReview | IArticle) => {
-                console.log(item)
             return (
                 <div className={styles.gridItem}>
                 <a href={`../articles/${item.pathname}`}>

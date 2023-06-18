@@ -33,7 +33,6 @@ const getMovie = async (req,res) => {
 
         res.json(movie)
     } catch (err) {
-        console.log(err.message)
         return res.status(500).json({msg: err.message})
     }
 }

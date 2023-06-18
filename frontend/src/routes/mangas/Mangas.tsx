@@ -23,7 +23,6 @@ const Mangas = () => {
         top: 0,
         behavior: "smooth"
       })
-      console.log(pageNumber)
       const res = await api.fetchMangas(pageNumber);
       if(res.data.mangas.length > 0) {
         dispatch(getMangas(res.data.mangas))
@@ -36,7 +35,6 @@ const Mangas = () => {
   }, [dispatch, pageNumber]);
 
   const {mangas} = useSelector((state:RootState)=>state.MangasReducer)
-  console.log(mangas)
   if(notFound) {
     return <NotFound />
   } else {

@@ -33,6 +33,6 @@ const rootReducer = combineReducers({
     CommentsReducer
 })
 
-const store = createStore(rootReducer, applyMiddleware(logger, thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 export {store, rootReducer}

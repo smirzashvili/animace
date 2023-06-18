@@ -36,7 +36,6 @@ const search = async (req,res) => {
 		res.json(filtered);
 
 	} catch (err) {
-		console.log(err);
 		res.status(500).json({
 			errorMessage: 'Please try again later',
 		});

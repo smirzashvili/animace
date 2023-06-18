@@ -6,7 +6,6 @@ const getActors = async (req,res) => {
         res.status(200).json(actors)
     }
     catch (err){
-        console.log(err)
         res.status(500).json(err)
     }
 }

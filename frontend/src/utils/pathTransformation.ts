@@ -1,9 +1,9 @@
 export const transformToUrl: (name: string) => string = (name: string) => {
-    return name?.replaceAll(" ", "-").toLowerCase()
+    return name?.replace(/\ /g, "-").toLowerCase()
 }
 
 export const transformToName: (url: string) => string = (url: string) => {
-    url = url.replaceAll("-", " ")
+    url = url.replace(/\-/g, " ")
     function capitalize(url: string) {
         return url.charAt(0).toUpperCase() + url.slice(1);
     }  
