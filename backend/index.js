@@ -70,7 +70,6 @@ app.use(express.static(publicPath));
 app.use('*', express.static(publicPath));
 
 app.get('/*', function(req, res) {
-
     res.sendFile(path.join(__dirname, '/build/index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
