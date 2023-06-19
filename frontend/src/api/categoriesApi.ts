@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/categories';
+const url = '/api/categories';
 
 export const fetchCategories = () => axios.get(url);
 

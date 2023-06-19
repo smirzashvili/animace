@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/users';
+const url = '/api/users';
 
 const config = {
     headers: { 'Content-Type': 'application/json' },

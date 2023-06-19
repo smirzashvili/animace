@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/mangas';
+const url = '/api/mangas';
 
 export const fetchMangas = (pageNumber?: number) => axios.get(`${url}?page=${pageNumber}`);
 

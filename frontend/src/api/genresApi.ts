@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/genres';
+const url = '/api/genres';
 
 export const fetchGenres = () => axios.get(url);
 

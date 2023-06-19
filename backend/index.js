@@ -33,7 +33,12 @@ app.use(bodyParser.urlencoded({extended: true }))
 
 app.use(express.json())
 
-app.use(express.static('build'))
+app.use(express.static(dirname + "/build/"));
+
+app.get("*", (req, res) => {
+    res.sendFile(dirname + "/build.index.html");
+});
+  
 
 app.use(fileUpload({
     useTempFiles: true

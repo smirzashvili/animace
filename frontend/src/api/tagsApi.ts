@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/tags';
+const url = '/api/tags';
 
 export const fetchTags = () => {
     axios.get(url)

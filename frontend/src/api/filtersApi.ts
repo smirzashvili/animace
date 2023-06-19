@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/filters';
+const url = '/api/filters';
 
 export const search = (data: {type: string, keyword: string}) => {
    return axios.get(`${url}/?s=${data.keyword}&type=${data.type}`)
