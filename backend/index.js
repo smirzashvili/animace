@@ -65,7 +65,12 @@ app.use('/api/staff', staffRouter);
 //     });
 // });
 
+const publicPath = path.join(__dirname, '../frontend/public');
+app.use(express.static(publicPath));
+app.use('*', express.static(publicPath));
+
 app.get('/*', function(req, res) {
+
     res.sendFile(path.join(__dirname, '/build/index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
