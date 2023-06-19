@@ -65,6 +65,14 @@ app.use('/api/staff', staffRouter);
 //     });
 // });
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/build/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+})
+
 const PORT = 5000
 
 const start = async () => {
