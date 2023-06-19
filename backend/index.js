@@ -20,29 +20,29 @@ const mangasRouter = require("./routes/mangas");
 const genresRouter = require("./routes/genres");
 const filtersRouter = require("./routes/filters");
 const staffRouter = require("./routes/staff");
+const path = require('path')
 
 require('dotenv').config()
 
-app.use(cors({ credentials: true, origin: ['http://localhost:3000'] }));
+app.use(cors({ credentials: true, origin: ['https://animace-front.onrender.com'] }));
 
 app.use(cookieParser())
-
 
 app.use(bodyParser.json({extended: true }))
 app.use(bodyParser.urlencoded({extended: true }))
 
 app.use(express.json())
-
-app.use(express.static(__dirname + "/build/"));
-
-app.get("*", (req, res) => {
-    res.sendFile(__dirname + "/build/index.html");
-});
   
-
 app.use(fileUpload({
     useTempFiles: true
 }))
+
+app.use(express.static(__dirname + "/build/"));
+
+app.use('/static', express.static(path.join(__dirname, '/build/static')));
+app.use(express.static(path.join(__dirname, '/build/static')));
+app.use(express.static(path.join(__dirname, '/build/static/css')));
+app.use(express.static(path.join(__dirname, '/build/static/js')));
 
 app.use('/api/users', usersRouter);
 app.use('/api/actors', actorsRouter);
@@ -58,6 +58,12 @@ app.use('/api/mangas', mangasRouter);
 app.use('/api/genres', genresRouter);
 app.use('/api/filters', filtersRouter);
 app.use('/api/staff', staffRouter);
+
+// app.get("*", (req, res) => {
+//     res.sendFile('index.html', {root: path.join(__dirname, '/build/')}, function(err) {
+//         if(err) res.status(500).send(err)
+//     });
+// });
 
 const PORT = 5000
 

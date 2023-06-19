@@ -18,22 +18,23 @@ const CategoriesSingle = () => {
     
     useEffect(() => {
         window.scrollTo({top: 0,behavior: "smooth"});
-        const getData = async () => {
-            const data = {
-                name: transformToName(name as string),
-                type: "category"
-            }
-            const res = await api.filterPosts(data)
-            if(res.data) {
-                setData(res.data)
-            } 
-        }
-        getData()
+        // const getData = async () => {
+        //     const data = {
+        //         name: transformToName(name as string),
+        //         type: "category"
+        //     }
+        //     const res = await api.filterPosts(data)
+        //     if(res.data) {
+        //         setData(res.data)
+        //     } 
+        // }
+        // getData()
     }, [name]);
         
     return (
         <>
-            {
+            hi
+            {/* {
                 data ? data.length > 0 ? 
                     <>
                         <h1 className={styles.title}>{transformToName(name as string)}</h1>
@@ -73,7 +74,7 @@ const CategoriesSingle = () => {
                     </>
                 : <NoData />
                 : ""
-            } 
+            }  */}
         </>
     )
 }

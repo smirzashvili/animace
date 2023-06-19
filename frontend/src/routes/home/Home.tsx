@@ -31,6 +31,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
   useEffect(() => {
     const getData = async () => {
       const res = await articlesApi.fetchArticles();
+      console.log(res.data)
       if(res.data) dispatch(getArticles(res.data.articles))
       const res1 = await moviesApi.fetchMovies();
       if(res1.data) dispatch(getMovies(res1.data.movies))
