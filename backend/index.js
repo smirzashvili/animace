@@ -59,7 +59,7 @@ app.use('/api/genres', genresRouter);
 app.use('/api/filters', filtersRouter);
 app.use('/api/staff', staffRouter);
 
-const PORT = process.env.PORT || 5000
+const PORT = 5000
 
 const start = async () => {
     connectDB(process.env.CONNECTION_STRING).then(
