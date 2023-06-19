@@ -1,4 +1,5 @@
 {
+  "homepage": ".",
   "proxy": "https://animace-mern.onrender.com",
   "name": "frontend",
   "version": "0.1.0",
