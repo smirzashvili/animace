@@ -121,12 +121,12 @@ function App() {
           <Route path="/staff/:name" element={<StaffSingle darkMode={darkMode} />}/>
           <Route path="/categories/:name" element={<CategoriesSingle />}/>
           <Route path="/tags/:name" element={<TagsSingle />}/>
-          <Route path="/articles/" element={<Articles />}/>
+          <Route path="/articles" element={<Articles />}/>
           <Route path="/articles/:name" element={<ArticlesSingle darkMode={darkMode} />}/>
-          <Route path="/reviews/" element={<Reviews />}/>
+          <Route path="/reviews" element={<Reviews />}/>
           <Route path="/reviews/:name" element={<ReviewsSingle darkMode={darkMode} />}/>
           <Route path="/authors/:name" element={<AuthorsSingle darkMode={darkMode} />}/>
-          <Route path="/genres/" element={<Genres />}/>
+          <Route path="/genres" element={<Genres />}/>
           <Route path="/genres/:name" element={<GenresSingle />}/>
           <Route path="/search" element={<SearchResult />}/>
           <Route path="*" element={<NotFound />}/>
