@@ -45,7 +45,7 @@ const Comments: React.FC<{darkMode: boolean, info: IReview | IArticle }> = ({dar
             setState({
                 ...state,
                 [name]: value,
-                photo: "https://res.cloudinary.com/dxkxeimv4/image/upload/v1645089806/animace/userPhoto/47548e7f026bc689ba743b2af2d391ee_dvbdgu.jpg"
+                photo: "../../assets/defaultUser.jpg"
             })
         }
     }
@@ -132,7 +132,7 @@ const Comments: React.FC<{darkMode: boolean, info: IReview | IArticle }> = ({dar
                             </>
                             : 
                             <>
-                                <img alt='a' src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645089806/animace/userPhoto/47548e7f026bc689ba743b2af2d391ee_dvbdgu.jpg" />
+                                <img alt='a' src="/assets/defaultUser.jpg" />
                                 <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className={styles.CommentArea}>
                                     <div>{`${item.name} - ${formatDate(item.createdAt)}`}</div>
                                     <button onClick={() => handleReply(item.name, item.index, item._id)}>Reply</button>

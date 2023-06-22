@@ -116,7 +116,7 @@
 }
 .spinner {
     position: absolute;
-    background-image: url("https://res.cloudinary.com/dxkxeimv4/image/upload/v1646389300/animace/banners/spinner_uuhnq9.png");
+    background-image: url("../../../public/assets/spinner.png");
     width: 25px;
     height: 25px;
     top: 50%;

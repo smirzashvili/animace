@@ -31,7 +31,6 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
   useEffect(() => {
     const getData = async () => {
       const res = await articlesApi.fetchArticles();
-      console.log(res.data)
       if(res.data) dispatch(getArticles(res.data.articles))
       const res1 = await moviesApi.fetchMovies();
       if(res1.data) dispatch(getMovies(res1.data.movies))
@@ -80,22 +79,22 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <Slider>
                     <Slide className="slide" index={0}>
                       <div className='innerSlide'>
-                      <Image className="image" src={"https://res.cloudinary.com/dxkxeimv4/image/upload/v1645262705/animace/banners/slider-banner-1-768x496_debott.jpg"} hasMasterSpinner={false} />
+                      <Image className="image" src={"/assets/homeBanner1.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
                     <Slide className="slide" index={1}>
                       <div className='innerSlide'>
-                      <Image className="image" src={"https://res.cloudinary.com/dc2dymvfh/image/upload/v1678552140/YourName-poster-movie-1170x756_kk7mo0.jpg"} hasMasterSpinner={false} />
+                      <Image className="image" src={"/assets/homeBanner2.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
                     <Slide className="slide" index={2}>
                       <div className='innerSlide'>
-                      <Image className="image" src={"https://res.cloudinary.com/dc2dymvfh/image/upload/v1678552250/20210925-103539-01_ncrt.1280-1170x720_s8una5.jpg"} hasMasterSpinner={false} />
+                      <Image className="image" src={"/assets/homeBanner3.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
                     <Slide className="slide" index={3}>
                       <div className='innerSlide'>
-                      <Image className="image" src={"https://res.cloudinary.com/dxkxeimv4/image/upload/v1645262736/animace/banners/slider-banner-2-768x496_hq3jdd.jpg"} hasMasterSpinner={false} />
+                      <Image className="image" src={"/assets/homeBanner4.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
                   </Slider>

@@ -199,7 +199,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             </form>
         </div>
         <div className={styles.secondItem}>
-            <img alt='a' src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645263683/animace/banners/susann-schuster-umHsjqIJyK4-unsplash_amej3t.jpg" />
+            <img alt='a' src="/assets/editProfileBackground.jpg" />
         </div>
     </div>
   )

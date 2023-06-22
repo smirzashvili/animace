@@ -166,7 +166,7 @@ const Header: React.FC<{
         <nav className={styles.container}>
             <div className={styles.item}>
                 <a href='/'>
-                    <img height={50} alt='dasdas' src='https://res.cloudinary.com/dxkxeimv4/image/upload/v1646389115/animace/banners/a-logo-res_s3owqz.svg' />
+                    <img height={50} alt='dasdas' src='/assets/logo.svg' />
                 </a>
             </div>
             <div className={styles.item}>
@@ -263,7 +263,7 @@ const Header: React.FC<{
                         <a className={styles.routesListItem} onMouseLeave={(e) => handleMouseLeave(e)} onMouseEnter={(e) => handleMouseEnter(e)} style={darkMode ? {"color": "white"}: {}} href="/about">About</a>
                         <a className={styles.routesListItem} onMouseLeave={(e) => handleMouseLeave(e)} onMouseEnter={(e) => handleMouseEnter(e)} style={darkMode ? {"color": "white"}: {}} href="/contact">Contact</a>
                         <a className={styles.routesListItem} onMouseLeave={(e) => handleMouseLeave(e)} onMouseEnter={(e) => handleMouseEnter(e)} style={darkMode ? {"color": "white"}: {}} href="/*">Error 404</a>
-                        <img alt='a' src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645262769/animace/banners/animace-banner-1-1024x576_itlyv7.jpg" />
+                        <img alt='a' src="/assets/sideMenu.jpg" />
                     </div>
                 </div> 
             </div>

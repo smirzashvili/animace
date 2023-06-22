@@ -7,7 +7,7 @@ const NotFound = () => {
 
   return (
     <div className={styles.relative}>
-        <img src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645263313/animace/banners/moujib-aghrout-s9ESRUFnKDg-unsplash-1170x756_yp1nyw.jpg"/>
+        <img src="/assets/notFoundBackground.jpg"/>
         <div className={styles.texts}>
             <h1>Oops! Page not found</h1>
             <h5>

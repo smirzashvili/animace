@@ -144,7 +144,7 @@ const SignUp = () => {
             </>}
         </div>
         <div className={styles.secondItem}>
-            <img alt='a' src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645263564/animace/banners/matt-popovich-0FZrPECK5cg-unsplash-1024x650_cdewg7.jpg" />
+            <img alt='a' src="/assets/signUpBackground.jpg" />
         </div>
     </div>
   )

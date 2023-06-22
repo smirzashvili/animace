@@ -108,7 +108,7 @@ const SignIn = () => {
             </>}       
         </div>
         <div className={styles.secondItem}>
-            <img src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645263626/animace/banners/dex-ezekiel-IxDPZ-AHfoI-unsplash-1024x683_lg2nrc.jpg" />
+            <img src="/assets/signInBackground.jpg" />
         </div>
     </div>
   )

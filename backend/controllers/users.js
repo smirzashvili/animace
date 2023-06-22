@@ -189,7 +189,7 @@ const forgetPasswordUser = async (req,res) => {
         }
 
         const access_token = accessTokenGenerator({id: user._id})
-        const url = `http://localhost:3000/reset-password/${access_token}`  
+        const url = `https://animace-back.onrender.com/reset-password/${access_token}`  
 
         mailSender(user.email, user.username, url)
 

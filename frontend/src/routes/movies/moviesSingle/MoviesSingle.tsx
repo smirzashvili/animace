@@ -250,6 +250,7 @@ if(notFound === true) {
                                 relatedMedia.map((item: IManga | IMovie | ISerie) => {
                                     return (
                                         <div style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
+                                            {console.log(item.type, item.pathname)}
                                             <a href={`../../${item.type}/${item.pathname}`}>
                                                 <img alt='a' src={item.photo}/>
                                             </a>
@@ -264,9 +265,13 @@ if(notFound === true) {
                                 })
                             }
                             <div style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
-                                <img alt='a' src="https://res.cloudinary.com/dc2dymvfh/image/upload/v1678552331/Evangelion-250x375_xxak5g.jpg"/>
+                                <a href={`../../mangas/evangelion`}>
+                                    <img alt='a' src="https://res.cloudinary.com/dc2dymvfh/image/upload/v1678552331/Evangelion-250x375_xxak5g.jpg"/>
+                                </a>
                                 <div className={styles.relatedMediaItemTextArea}>
-                                    <div>Evangelion</div>
+                                    <a href={`../../mangas/evangelion`}>
+                                        <div>Evangelion</div>
+                                    </a>
                                     <div>Manga</div>
                                 </div>
                             </div>

@@ -82,7 +82,7 @@ const SearchSideBar = () => {
         <img
             className={styles.bottomImage}
             alt="a"
-            src="https://res.cloudinary.com/dxkxeimv4/image/upload/v1645273944/animace/banners/animace-banner-3-1024x576_soxd9w.jpg"
+            src="/assets/searchSideBar.jpg"
         />
     </>
   )

@@ -24,7 +24,7 @@ const path = require('path')
 
 require('dotenv').config()
 
-app.use(cors({ credentials: true, origin: ['https://animace-front.onrender.com'] }));
+app.use(cors({ credentials: true, origins: ['http://localhost:3000/', 'http://localhost:3000/', 'https://animace-front.onrender.com'] }));
 
 app.use(cookieParser())
 

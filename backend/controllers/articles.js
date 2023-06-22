@@ -16,7 +16,6 @@ const getArticles = async (req,res) => {
     }
 }
 const getArticle = async (req,res) => {
-    console.log('aric')
     try {
         const name = req.params.name
         const article = await Article.findOne({pathname: name })

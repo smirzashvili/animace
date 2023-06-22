@@ -16,14 +16,14 @@ const mailSender = (email, username, url) => {
         html: `
         <div style="width: 100%; background-color: #F2F4F6; text-align: center">
             <br>
-            <a href="http://localhost:3000" style="text-align: center; font-size: 26px; color: #A8AAAF; text-decoration: none;font-weight: bold">ANIMACE</a>
+            <a href="https://animace-back.onrender.com/" style="text-align: center; font-size: 26px; color: #A8AAAF; text-decoration: none;font-weight: bold">ANIMACE</a>
             <br>
             <br>
             <div style="font-size: 16px; margin: 0 auto; width: 50%; color: #51545e; background-color: white; padding: 40px; ">
-                <div style="text-align: left; margin-bottom: 20px;">Someone requested to reset the password for the following account:</div>
-                <div style="text-align: left; margin-bottom: 20px;">Username: ${username}</div>
-                <div style="text-align: left; margin-bottom: 20px;">If this was a mistake, just ignore this email and nothing will happen.</div>
-                <div style="text-align: left; margin-bottom: 30px;">To reset your password, click the button below.</div>
+                <div style="margin-bottom: 20px;">Someone requested to reset the password for the following account:</div>
+                <div style="margin-bottom: 20px;">Username: ${username}</div>
+                <div style="margin-bottom: 20px;">If this was a mistake, just ignore this email and nothing will happen.</div>
+                <div style="margin-bottom: 30px;">To reset your password, click the button below.</div>
         
                 <a href=${url} style="text-align: center; font-size: 15px; text-align: center; width: 180px; background-color: #555555; padding: 12px; text-decoration: none; border-radius: 3px; letter-spacing: 2px; color:white">Reset Password</a>
             </div>
@@ -38,6 +38,7 @@ const mailSender = (email, username, url) => {
 
     transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
+            console.log(err)
         }
     });
 }
