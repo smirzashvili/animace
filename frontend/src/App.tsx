@@ -133,7 +133,7 @@ function App() {
         </Routes>
       </Main>
       <Footer darkMode={darkMode} />
-      </div>
+    </div>
   );
 }
 
