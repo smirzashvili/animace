@@ -7,16 +7,16 @@
   font-weight: bold;
   font-size: 1.25rem;
   font-family: 'IBM Plex Sans', sans-serif; 
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * var(--app-scale));; 
 }
 .carousell {
-  width: calc(100% - 2.3rem); 
+  width: calc(100% - calc(2.3rem * var(--app-scale))); 
   position: absolute;
-  left: 2.3rem;
+  left: calc(2.3rem * var(--app-scale));
 }
 
 .innerSlide {
-  width: calc(100% - 2.5rem); 
+  width: calc(100% - calc(2.5rem * var(--app-scale))); 
   height: calc(100%);
   position: absolute;
   opacity: 0.8;
@@ -44,7 +44,7 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  transform: translate(-2.2rem, -2.4rem);
+  transform: translate(calc(-2.2rem * var(--app-scale)), calc(-2.4rem * var(--app-scale)));
 }
 .image {
   /* object-fit: cover; */
@@ -59,12 +59,17 @@
   color: unset;
 }
 .arrowButton svg {
-  width: 18px;
-  height: 18px;
+  width: calc(18px * var(--app-scale));; 
+  height: calc(18px * var(--app-scale));; 
 }
 .arrowButton:active {
   color: grey;
 }
+
+
+
+
+
 .grid {
   margin-top: 73vh;
   display: grid;
@@ -454,4 +459,18 @@
   justify-content: center;    
   align-items: center;
   line-height: 1.2rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .carousell {
+    width: calc(100% - calc(1rem * var(--app-scale))); 
+    left: calc(1rem * var(--app-scale));
+  }
+  .innerSlide {
+    width: calc(100% - calc(1rem * var(--app-scale)));     
+  }
+  .buttons {
+    transform: translate(calc(-1rem * var(--app-scale)), calc(-2.4rem * var(--app-scale)));
+  }
 }

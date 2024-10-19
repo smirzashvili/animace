@@ -1,24 +1,31 @@
 .layout {
-  padding-top: 85px;
-  margin-bottom: 15px; 
-  padding-right: 2.3rem; 
-  padding-left: 2.3rem;
-  min-height: calc(100vh - 15px);
+  padding-top: calc(85px * var(--app-scale));; 
+  margin-bottom: calc(15px * var(--app-scale));; 
+  padding-right: calc(2rem * var(--app-scale));;  
+  padding-left: calc(2.3rem * var(--app-scale));; 
+  min-height: calc(100vh - calc(15px * var(--app-scale)));
 }
 .scrollButton {
   position: fixed;
-  right: 20px;
-  bottom: 30px;
-  width: 34px;
-  height: 34px;
+  right: calc(20px * var(--app-scale));; 
+  bottom: calc(30px * var(--app-scale));; 
+  width: calc(34px * var(--app-scale));; 
+  height: calc(34px * var(--app-scale));; 
   border-radius: 0.5rem;
   transition: 0.5s;
   background-color: unset;
   color: transparent;
-  font-size: 22px;
+  font-size: calc(22px * var(--app-scale));; 
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: unset;
+}
+
+@media only screen and (max-width: 1000px) {
+  .layout {
+    padding-right: 1rem; 
+    padding-left: 1rem;
+  }
 }
   

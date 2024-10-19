@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Home.css"
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -56,6 +56,26 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
   const {mangas} = useSelector((state: RootState) => state.MangasReducer)
   const {reviews} = useSelector((state: RootState) => state.ReviewsReducer)
 
+  const [visibleSlides, setVisibleSlides] = useState(2);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1000) {
+        setVisibleSlides(1);
+      } else {
+        setVisibleSlides(2);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className='header'>
@@ -68,7 +88,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               naturalSlideHeight={60}
               totalSlides={4}
               playDirection='forward'
-              visibleSlides={2}
+              visibleSlides={visibleSlides}
               infinite={true}
               >
               <div className='buttons'>

@@ -70,13 +70,11 @@ const Header: React.FC<{
 
     const handleUnhideMenu = () => {
         setUnhideHeaderForm(false)
-        let elem = ref.current[0].style
-        if(elem.width === "320px" && elem.padding === "0.4rem") {
-            elem.width = "0px"
-            elem.padding = "0rem"
+        let elem = ref.current[0]
+        if(elem.classList.contains(styles.open)) {
+            elem.classList.remove(styles.open)
         } else {
-            elem.width = "320px"
-            elem.padding = "0.4rem"
+            elem.classList.add(styles.open)
         }
     }
     const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

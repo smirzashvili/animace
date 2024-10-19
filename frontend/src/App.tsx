@@ -77,6 +77,27 @@ function App() {
 
   }, [dispatch, isLoggedIn]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const scale = window.innerWidth > 1920
+        ? Math.max(1, Math.min(window.innerWidth / 1920, window.innerHeight / 1080))
+        : 1;
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-scale', `${scale}`);
+    };
+
+    // Set initial scale on mount
+    handleResize();
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handleHideElements = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if(unhideHeaderForm) {
       let array: Array<HTMLElement> = []
