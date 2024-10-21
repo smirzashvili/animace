@@ -121,7 +121,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               </div>
           </CarouselProvider>
         </div>
-      <div className='grid'>
+      <div className='grid1'>
         <div className='gridItem'>
           <div className='header'>
             <div className='headerText'>Latest articles</div>
@@ -160,7 +160,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
         <div className='gridItem'>
           <div className='headerText'>Popular reads</div>
           <div className='reads'>
-            {articles.sort((a: { comments: string },b: { comments: string }) => b.comments.length - a.comments.length).slice(0, 9).map((item: IArticle) => {
+            {articles.sort((a: { comments: string },b: { comments: string }) => b.comments.length - a.comments.length).slice(0, 10).map((item: IArticle) => {
               return (
                 <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className='readsItem'>
                   <a href={`/articles/${item.pathname}`}>
@@ -335,6 +335,8 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
             </CarouselProvider>
           </div>
         </div>
+      </div>
+      <div className='grid2'>
           <div className='gridItem'>
             <div className='moviesFlex'>
               <div  className='moviesInnerFlex'>

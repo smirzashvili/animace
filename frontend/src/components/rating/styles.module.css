@@ -1,16 +1,16 @@
 .small {
-    transform: translateX(-1px);
+    transform: translateX(calc(-1px * var(--app-scale)));
 }
 .small svg {
     color: #FDC83E;
-    font-size: 17px;
-    margin-right: -1px;
+    font-size: calc(17px * var(--app-scale));
+    margin-right: calc(-1px * var(--app-scale));
 }
 .medium {
-    transform: translateX(-1px);
+    transform: translateX(calc(-1px * var(--app-scale)));
 }
 .medium svg {
     color: #FDC83E;
-    font-size: 24px;
+    font-size: calc(24px * var(--app-scale));
     margin-right: 0px;
 }

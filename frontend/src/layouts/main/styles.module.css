@@ -3,7 +3,7 @@
   margin-bottom: calc(15px * var(--app-scale));; 
   padding-right: calc(2rem * var(--app-scale));;  
   padding-left: calc(2.3rem * var(--app-scale));; 
-  min-height: calc(100vh - calc(15px * var(--app-scale)));
+  /* min-height: calc(100vh - calc(15px * var(--app-scale))); */
 }
 .scrollButton {
   position: fixed;
