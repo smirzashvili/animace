@@ -1,45 +1,46 @@
 .title {
-    font-size: 1.8rem;
+    font-size: calc(1.8rem * var(--app-scale));; 
     font-weight: bold;
 }
 .line {
-    height: 1px;
+    height: calc(1px * var(--app-scale));; 
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: calc(20px * var(--app-scale));
+    margin-bottom: calc(30px * var(--app-scale));
 }
 .filterButtons  {
     display: flex;
-    gap: 8px;
+    gap: calc(8px * var(--app-scale));
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: calc(40px * var(--app-scale));
+    flex-wrap: wrap;
 }
 .filterButtons button {
-    width: 38px;
-    height: 38px;
+    width: calc(38px * var(--app-scale));
+    height: calc(38px * var(--app-scale));
     border-radius: 50%;
     cursor: pointer;
     color: white;
     background-color: #dd3333;
     border: none;
     transition: background-color .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
 }
 .filterButtons button:hover {
     background-color: #FF5C58;
 }
 .letter {
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: calc(1.75rem * var(--app-scale));
 }
 .grid {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 50px;
-    margin-bottom: 40px;
+    grid-gap: calc(50px * var(--app-scale));
+    margin-bottom: calc(40px * var(--app-scale));
 }
 .gridItem {
     width: 100%;
@@ -50,12 +51,12 @@
 }
 .gridItem img {
     border-radius: 50%;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
     cursor: pointer;
-    width: 150px;
-    height: 150px;
+    width: calc(150px * var(--app-scale));
+    height: calc(150px * var(--app-scale));
     object-fit: cover;
-    margin-bottom: 12px;
+    margin-bottom: calc(12px * var(--app-scale));
     transition: 0.2s ease-in-out;
 }
 .gridItem img:hover {
@@ -66,7 +67,7 @@
 }
 .gridItem a:nth-child(2) {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: calc(1rem * var(--app-scale));
     text-decoration: none;
     transition: 0.2s ease-in-out;
 }
@@ -76,8 +77,8 @@
 .activeButton {
     background-color: #FF5C58!important;
     border: 1px solid #9cccff!important;
-    width: 39px!important;
-    height: 39px!important;
+    width: calc(39px * var(--app-scale))!important;
+    height: calc(39px * var(--app-scale))!important;
 }
 .a {
     opacity: 0;
@@ -105,5 +106,12 @@
     }
     100% {
         transform: scale(0);
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }

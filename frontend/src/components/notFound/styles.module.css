@@ -47,6 +47,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%); 
+    text-wrap: nowrap;
 }
 .texts a button:hover {
     background: #FF5C58;

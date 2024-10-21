@@ -11,7 +11,7 @@
   bottom: calc(30px * var(--app-scale));; 
   width: calc(34px * var(--app-scale));; 
   height: calc(34px * var(--app-scale));; 
-  border-radius: 0.5rem;
+  border-radius: calc(0.5rem * var(--app-scale));; 
   transition: 0.5s;
   background-color: unset;
   color: transparent;

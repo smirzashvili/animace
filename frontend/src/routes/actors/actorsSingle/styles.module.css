@@ -1,12 +1,12 @@
 .line {
-    height: 1px;
+    height: calc(1px * var(--app-scale));
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
-    margin: 15px 0px;
+    margin: calc(15px * var(--app-scale)) 0px;
 }
 .title {
-    font-size: 1.5rem;
+    font-size: calc(1.5rem * var(--app-scale));
     font-weight: bold;
 }
 .flex {
@@ -16,7 +16,7 @@
 .flexItem:nth-child(1) {
     width: 25%;
     position: sticky;
-    top: 110px;
+    top: calc(110px * var(--app-scale));
     height: 100%;
 }
 .flexItem:nth-child(2) {
@@ -24,27 +24,28 @@
 }
 .flexItemImage {
     border-radius: 50%;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
     transition: .2s ease-in-out;
-    margin-left: 40px;
-    width: 200px;
-    height: 200px;
+    margin-left: calc(40px * var(--app-scale));
+    width: calc(200px * var(--app-scale));
+    height: calc(200px * var(--app-scale));
     object-fit: cover;
 }
 .buttons {
     display: flex;
-    gap: 8px;
+    gap: calc(8px * var(--app-scale));
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: calc(15px * var(--app-scale));
 
 }
 .buttons button {
-    padding: 10px 15px;
-    border-radius: 0.5rem;
+    padding: calc(10px * var(--app-scale)) calc(15px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     border: none;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     font-weight: 400;
+    text-wrap: nowrap;
 }
 .activeButton {
     color: white;
@@ -55,27 +56,28 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 15px;
-    grid-column-gap: 30px;
+    grid-row-gap: calc(15px * var(--app-scale));
+    grid-column-gap: calc(30px * var(--app-scale));
     animation: unhideAnimation1;
     animation-duration: 0.4s;
     opacity: 1;
 }
 .gridItem {
     width: 100%;
-    height: 180px;
+    height: calc(180px * var(--app-scale));
     border-radius: 0.5rem;
-    margin-bottom: 15px;
-    padding: 1rem;
+    margin-bottom: calc(15px * var(--app-scale));
+    padding: calc(1rem * var(--app-scale));
     background-color: #F8F7FF;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
     display: flex;
-    gap: 1rem;
+    gap: calc(1rem * var(--app-scale));
     justify-content: flex-start;
+    font-size: calc(15px * var(--app-scale));
 }
 .gridItemImage {
-    border-radius: 0.8rem;
-    width: 100px;
+    border-radius: calc(0.8rem * var(--app-scale));
+    width: calc(100px * var(--app-scale));
     height: 100%;
     cursor: pointer;
     object-fit: cover;
@@ -85,13 +87,13 @@
     opacity: 0.8;
 }
 .gridItemHeader {
-    font-size: 1rem;
+    font-size: calc(1rem * var(--app-scale));
     font-weight: bold;
 }
 .gridItemSaber {
     opacity: 0.8;
-    margin-top: 8px;
-    margin-bottom: 12px;
+    margin-top: calc(8px * var(--app-scale));
+    margin-bottom: calc(12px * var(--app-scale));
 }
 .gridItemHeader:hover {
     opacity: 0.8;
@@ -102,15 +104,15 @@
 }
 .noPosts {
     font-weight: bold;
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    font-size: calc(1.25rem * var(--app-scale));
+    margin-bottom: calc(15px * var(--app-scale));
 }
 .returnButton {
-    padding: 5px 8px 5px 3px;
-    border-radius: 0.5rem;
+    padding: calc(5px * var(--app-scale)) calc(8px * var(--app-scale)) calc(5px * var(--app-scale)) calc(3px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     border: none;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     color: white;
     background-color: #dd3333;
     display: flex;
@@ -120,9 +122,9 @@
     opacity: 0.8;
 }
 .returnButton svg {
-    margin-right: 1px;
-    width: 18px;
-    height: 18px;
+    margin-right: calc(1px * var(--app-scale));
+    width: calc(18px * var(--app-scale));
+    height: calc(18px * var(--app-scale));
 }
 .news {
     animation: unhideAnimation;
@@ -130,13 +132,13 @@
     opacity: 1;    
 }
 .bio {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075)!important;
     background-color: #F8F7FF;    
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     animation: unhideAnimation2;
     animation-duration: 0.4s;
     opacity: 1;
-    padding: 1em;
+    padding: calc(1em * var(--app-scale));
 }
 .bio p {
     line-height: 1.5;
@@ -169,37 +171,37 @@
 .newsGrid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: calc(2rem * var(--app-scale));
 }
 .newsGridItem {
-    padding: 15px;
-    border-radius: 10px;
+    padding: calc(15px * var(--app-scale));
+    border-radius: calc(10px * var(--app-scale));
     background-color: #F8F7FF;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
     width: calc(100% / 3);
     height: 100%;
 }
 .newsGridItem img {
     transition: .2s;
     width: 100%;
-    height: 170px;
+    height: calc(170px * var(--app-scale));
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: calc(10px * var(--app-scale));
 }
 .newsGridItem img:hover {
     opacity: 0.8;
 }
 .newsGridDate {
     font-size: 80%;
-    margin-bottom: 5px;
+    margin-bottom: calc(5px * var(--app-scale));
     opacity: 0.9;
 }
 .newsGridText {
-    padding: 3px 8px;
+    padding: calc(3px * var(--app-scale)) calc(8px * var(--app-scale));
 }
 .newsGridTitle {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: calc(1rem * var(--app-scale));
 }
 .newsGridTitle:hover {
     opacity: 0.8;
@@ -207,7 +209,40 @@
 .newsGridSubTitle {
     font-weight: 400;
     opacity: 0.95;
-    line-height: 21px;
-    font-size: 14px;
-    margin-top: 6px;
+    line-height: calc(21px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
+    margin-top: calc(6px * var(--app-scale));
 }
+
+
+@media only screen and (max-width: 1500px) {
+    .flexItem:nth-child(1) {
+        position: relative;
+        top: 0;
+    }
+    .flexItemImage {
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .flexItemImage {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .flexItem:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
