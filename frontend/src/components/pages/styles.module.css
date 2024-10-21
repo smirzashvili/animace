@@ -1,24 +1,24 @@
 .pages {
     display: flex;
     justify-content: center;
-    gap: 3px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    gap: calc(3px * var(--app-scale));
+    margin-top: calc(30px * var(--app-scale));
+    margin-bottom: calc(50px * var(--app-scale));
 }
 .pages button:first-child svg {
-    width: 22px;
-    height: 22px;
+    width: calc(22px * var(--app-scale));
+    height: calc(22px * var(--app-scale));
     transform: translateX(-1px);
 }
 .pages button:last-child svg {
-    width: 22px;
-    height: 22px;
+    width: calc(22px * var(--app-scale));
+    height: calc(22px * var(--app-scale));
     transform: translateX(1px);
 }
 .pages button {
-    font-size: 17px;
-    width: 35px;
-    height: 35px;
+    font-size: calc(17px * var(--app-scale));
+    width: calc(35px * var(--app-scale));
+    height: calc(35px * var(--app-scale));
     border-radius: 50%;
     color: white;
     background-color: #dd3333;
