@@ -1,8 +1,8 @@
 .header {
     z-index: 99;
     position: fixed;
-    left: 2rem;
-    right: 2rem;
+    left: calc(2rem * var(--app-scale));
+    right: calc(2rem * var(--app-scale));
     height: calc(70px * var(--app-scale));
     background-color: white;
 }
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: flex-start;
 }
-.item img {
+.item a img {
     vertical-align: middle;
 }
 
@@ -228,8 +228,8 @@
     scrollbar-width: 60px;
 }
 .sideNav.open {
-    width: 320px;
-    padding: 0.4rem;
+    width: calc(320px * var(--app-scale));
+    padding: calc(0.4rem * var(--app-scale));
 }
 
 .sideNav.darkMode {
@@ -266,12 +266,13 @@
     border-radius: calc(7px * var(--app-scale));
     transition: 0.2s;
     font-size: calc(15px * var(--app-scale));
+    text-wrap: nowrap;
 }
 .routesListItem:hover {
     background-color: #DFE7FD;
 }
 .routesList img {
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     width: 100%;
     margin-top: calc(20px * var(--app-scale));
 }
@@ -330,10 +331,15 @@
         left: 0.85rem;
         right: 1rem;
     }
-    .item img {
+    .item a img {
         width: 40px;
     }
     .container .item {
         width: unset;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .sideNav.open {
+        width: 250px;
     }
 }
