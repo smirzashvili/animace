@@ -1,19 +1,19 @@
 .upperImage {
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     width: 100%;
     height: 60vh;
     object-fit: cover;
 }
 .layout {
-    padding: 1.5rem 2rem;
+    padding: calc(1.5rem * var(--app-scale)) calc(2rem * var(--app-scale));
 }
 .moviesTextAreaStars {
-    transform: translateX(-1px);
+    transform: translateX(calc(-1px * var(--app-scale)));
 }
 .moviesTextAreaStars svg {
     color: #FDC83E;
-    font-size: 17px;
-    margin-right: -1px;
+    font-size: calc(17px * var(--app-scale));
+    margin-right: calc(-1px * var(--app-scale));
 }
 .headerArea {
     display: flex;
@@ -21,9 +21,9 @@
     align-items: center;
 }
 .headerAreaTitle {
-    font-size: 2rem;
+    font-size: calc(2rem * var(--app-scale));
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: calc(5px * var(--app-scale));
 }
 .headerAreaText {
     font-size: unset;
@@ -32,43 +32,43 @@
 }
 .ratingArea {
     display: flex;
-    width: calc(100%/4 - 20px);
+    width: calc(100%/4 - calc(20px * var(--app-scale)));
     align-items: center;
-    gap: 15px;
+    gap: calc(15px * var(--app-scale));
 }
 .ratingAreaRating {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: calc(50px * var(--app-scale));
+    height: calc(50px * var(--app-scale));
     color: white;
-    font-size: 1.5em;
+    font-size: calc(1.5em * var(--app-scale));
     font-weight: 700;
     display: flex;
     justify-content: center;    
     align-items: center;
-    line-height: 1.2rem;
+    line-height: calc(1.2rem * var(--app-scale));
 }
 .ratingAreaChoice {
-    font-size: 1rem;
+    font-size: calc(1rem * var(--app-scale));
     font-weight: 700;
 }
 .line {
-    height: 1px;
+    height: calc(1px * var(--app-scale));
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: calc(30px * var(--app-scale));
+    margin-bottom: calc(30px * var(--app-scale));
 }
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr [col-start]);
-    grid-column-gap: 30px;
+    grid-column-gap: calc(30px * var(--app-scale));
 }
 .gridItem:nth-child(1) {
     grid-column: 1/2;
     position: sticky;
-    top: 100px;
+    top: calc(100px * var(--app-scale));
     height: 70vh;
 }
 .gridItem:nth-child(2) {
@@ -81,34 +81,35 @@
 .stickyImage {
     width: 100%;
     height: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    object-fit: cover;
 }
 .genres {
     display: flex;
-    gap: 8px;
+    gap: calc(8px * var(--app-scale));
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: calc(20px * var(--app-scale));
 }
 .genresId {
-    border: 2px solid;
+    border: calc(2px * var(--app-scale)) solid;
     text-transform: uppercase;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     font-weight: bold;
-    font-size: 20px;
-    padding: 0.4rem 0.6rem;
-    margin-right: 2px;
+    font-size: calc(20px * var(--app-scale));
+    padding: calc(0.4rem * var(--app-scale)) calc(0.6rem * var(--app-scale));
+    margin-right: calc(2px * var(--app-scale));
 }
 .genres button {
-    height: 30px;
-    border-radius: 0.5rem;
+    height: calc(30px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
-    padding: 0px 8px;
+    padding: 0px calc(8px * var(--app-scale));
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
 }
 .genres button:hover {
     background-color: #FF5C58;
@@ -116,16 +117,17 @@
 .features {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .features tr {
-    border-spacing: 5em;
+    border-spacing: calc(5em * var(--app-scale));
 }
 .features td, .features th {
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(1.5rem * var(--app-scale));
 }
 .features tr:last-child td, .features tr:last-child th {
     padding-bottom: 0px;
@@ -139,32 +141,32 @@
 .story {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
 }
 .storyTitle {
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
     font-weight: bold;
 }
 .story div:nth-child(2) {
-    margin: 1rem 0rem;
+    margin: calc(1rem * var(--app-scale)) 0rem;
 }
 .story button {
-    height: 30px;
-    border-radius: 0.5rem;
+    height: calc(30px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
-    padding: 0px 8px;
+    padding: 0px calc(8px * var(--app-scale));
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: calc(4px * var(--app-scale));
 }
 .story button:hover {
     background-color: #FF5C58;
@@ -172,30 +174,30 @@
 .staffAndCast {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
     display: flex;
 }
 .staffAndCastHeader {
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
     font-weight: bold;
 }
 .innerStaffAndCast {
     width: 100%;
 }
 .line1 {
-    margin: 1rem 0rem;
-    height: 1px;
+    margin: calc(1rem * var(--app-scale)) 0rem;
+    height: calc(1px * var(--app-scale));
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
 }
 .staffAndCast img {
-    width: 60px;
-    height: 60px;
-    border-radius: 0.5rem;
+    width: calc(60px * var(--app-scale));
+    height: calc(60px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     transition: .2s ease-in-out;
     object-fit: cover;
 }
@@ -205,35 +207,35 @@
 .singleStaffAndCast {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1rem;
+    gap: calc(12px * var(--app-scale));
+    margin-bottom: calc(1rem * var(--app-scale));
 }
 .InnerSingleStaffAndCast {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
+    gap: calc(4px * var(--app-scale));
 }
 .InnerSingleStaffAndCast a div {
     font-weight: 700;
-    font-size: 14px!important;
+    font-size: calc(14px * var(--app-scale))!important;
 }
 .InnerSingleStaffAndCast a div:hover {
     opacity: 0.8;
 }
 .role {
-    font-size: 12px;
+    font-size: calc(12px * var(--app-scale));
 }
 .relatedMedia {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
 }
 .relatedMediaHeader {
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
     font-weight: bold;
 }
 .relatedMediaItems {
@@ -241,20 +243,20 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: calc(20px * var(--app-scale));
 }
 .relatedMediaItem {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075)!important;
     background-color: #f8f7ff;
-    height: 110px;
-    border-radius: 0.5rem;
-    padding: 1rem;
+    height: calc(110px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
+    padding: calc(1rem * var(--app-scale));
     display: flex;
-    gap: 12px;
+    gap: calc(12px * var(--app-scale));
 }
 .relatedMediaItem img {
     height: 100%;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     transition: 0.2s;
 }
 .relatedMediaItem img:hover {
@@ -262,57 +264,58 @@
 }
 .relatedMediaItemTextArea div:nth-child(1) {
     font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 12px;
+    font-size: calc(1rem * var(--app-scale));
+    margin-bottom: calc(12px * var(--app-scale));
 }
 .relatedMediaItemTextArea div:nth-child(1):hover {
     opacity: 0.8;
 }
 .relatedMediaItemTextArea div:nth-child(2) {
-    font-size: 12px;
+    font-size: calc(12px * var(--app-scale));
 }
 .ratingEntries {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .ratingEntriesTitle {
-    font-size: 16px;
+    font-size: calc(16px * var(--app-scale));
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: calc(1rem * var(--app-scale));
 }
 .ratingAndDateArea {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: calc(15px * var(--app-scale));
 }
 
 .ratingAndDateAreaStars {
-    transform: translateX(-1px);
+    transform: translateX(calc(-1px * var(--app-scale)));
 }
 .ratingAndDateAreaStars svg {
     color: #FDC83E;
-    font-size: 23px;
-    margin-right: -1px;
+    font-size: calc(23px * var(--app-scale));
+    margin-right: -calc(1px * var(--app-scale));
 }
 .ratingAndDateAreaDate {
-    font-size: 11.5px;
+    font-size: calc(11.5px * var(--app-scale));
     transform: translateY(-2px);
 }
 .ratingAndDateAreaReview {
-    padding: 10px 0px;
+    padding: calc(10px * var(--app-scale)) 0px;
 }
 .ratingEntriesAuthorArea {
     display: flex;
     align-items: center;
-    padding-top: 10px;
-    gap: 12px
+    padding-top: calc(10px * var(--app-scale));
+    gap: calc(12px * var(--app-scale));
 }
 .ratingEntriesAuthorArea img {
-    width: 36px;
-    height: 36px;
+    width: calc(36px * var(--app-scale));
+    height: calc(36px * var(--app-scale));
     border-radius: 50%;
     transition: 0.2s;
     object-fit: cover;
@@ -322,7 +325,7 @@
 }
 
 .ratingEntriesAuthorArea a:nth-child(2) {
-    transform: translateY(-3px);
+    transform: translateY(calc(-3px * var(--app-scale)));
     font-weight: bold;
 }
 .ratingEntriesAuthorArea a:nth-child(2):hover {
@@ -331,29 +334,29 @@
 
 .trailerArea {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: calc(15px * var(--app-scale));
 }
 .trailerArea img {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
 }
 .trailerArea button {
     position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    height: 30px;
-    padding: 0px 8px;
-    border-radius: 0.5rem;
+    left: calc(1rem * var(--app-scale));
+    bottom: calc(1rem * var(--app-scale));
+    height: calc(30px * var(--app-scale));
+    padding: 0px calc(8px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: calc(4px * var(--app-scale));
 }
 .trailerArea button:hover {
     background-color: #FF5C58;
@@ -362,22 +365,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: calc(10px * var(--app-scale));
 }
 .relatedPostsHeader div:nth-child(1) {
     font-weight: bold;
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
 }
 .relatedPostsHeader div:nth-child(2) svg {
-    font-size: 18px;
-    margin-left: 2px;
+    font-size: calc(18px * var(--app-scale));
+    margin-left: calc(2px * var(--app-scale));
     color: rgb(196, 196, 196);
 }
 .relatedPostsHeader div:nth-child(2){
     transform: translate(4px, 2px);
 }
 .relatedPostsImg {
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     width: 100%;
     transition: .2s ease-in-out;
     cursor: pointer;
@@ -386,8 +389,8 @@
     opacity: 0.8;
 }
 .relatedPostsTitle {
-    padding: 4px 8px 8px 8px;
-    font-size: 15px;
+    padding: calc(4px * var(--app-scale)) calc(8px * var(--app-scale)) calc(8px * var(--app-scale)) calc(8px * var(--app-scale));
+    font-size: calc(15px * var(--app-scale));
     font-weight: bold;
 }
 .relatedPostsTitle a:hover {
@@ -396,9 +399,9 @@
 .relatedPostsAuthorArea {
     display: flex;
     align-items: center;
-    padding: 0px 10px;
-    margin-bottom: 30px;
-    gap: 12px;
+    padding: 0px calc(10px * var(--app-scale));
+    margin-bottom: calc(30px * var(--app-scale));
+    gap: calc(12px * var(--app-scale));
 }
 .relatedPostsAuthorArea img {
     border-radius: 50%;
@@ -408,7 +411,7 @@
     opacity: 0.8;
 }
 .relatedPostsAuthorArea a:nth-child(2) {
-    transform: translateY(-2px);
+    transform: translateY(calc(-2px * var(--app-scale)));
 }
 .relatedPostsAuthorArea a:nth-child(2):hover {
     opacity: 0.8;
@@ -416,7 +419,7 @@
 .modal {
     position: fixed; 
     z-index: 99999; 
-    padding: 30px 280px;
+    padding: calc(30px * var(--app-scale)) calc(280px * var(--app-scale));
     left: 0;
     top: 0;
     width: 100%;
@@ -428,7 +431,7 @@
     padding-top: 0px;
 }
 .showTextModal {
-    padding-top: 30px;
+    padding-top: calc(30px * var(--app-scale));
     visibility: visible;
     opacity: 1;
 }
@@ -436,10 +439,10 @@
 .modalContent {
     overflow: auto;
     max-height: calc(100vh - 60px);
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     background-color: #fefefe;
     margin: auto;
-    padding: 10px 20px;
+    padding: calc(10px * var(--app-scale)) calc(20px * var(--app-scale));
 }
 /* @keyframes modalanimate {
     0% {
@@ -447,7 +450,7 @@
         background-color: unset;
     }
     100% {
-        padding-top: 30px;
+        padding-top: calc(30px * var(--app-scale));
         background-color: rgba(0,0,0,0.4);
     }
 } */
@@ -456,15 +459,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
+    border-top-right-radius: calc(0.5rem * var(--app-scale));
+    border-top-left-radius: calc(0.5rem * var(--app-scale));
 }
 .modalTitle {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: calc(1.5rem * var(--app-scale));
 }
 .modalCloseBtn {
-    font-size: 24px;
+    font-size: calc(4px * var(--app-scale));
     transform: translateX(4px);
     cursor: pointer;
 }
@@ -473,17 +476,17 @@
 }
 .modalPhoto {
     width: 100%;
-    border-radius: 0.5rem;
-    margin: 12px 0px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    margin: calc(12px * var(--app-scale)) 0px;
 }
 .modalText {
-    padding: 0px 10px;
-    line-height: 1.4rem;
+    padding: 0px calc(10px * var(--app-scale));
+    line-height: calc(1.4rem * var(--app-scale));
 }
 .modal1 {
     position: fixed; 
     z-index: 99999; 
-    padding: 30px 100px;
+    padding: calc(30px * var(--app-scale)) calc(100px * var(--app-scale));
     left: 0;
     top: 0;
     width: 100%;
@@ -498,21 +501,21 @@
     opacity: 1;
 }
 .modalContent1 {
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     background-color: #fefefe;
     margin: auto;
-    padding: 20px 20px;
+    padding: calc(20px * var(--app-scale)) calc(20px * var(--app-scale));
     height: 100%;
 }
 .modalVideo {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
 }
 .showMore {
     font-weight: 600;
-    margin-left: 5px;
+    margin-left: calc(5px * var(--app-scale));
     cursor: pointer;
 }
 .showMore:hover {
@@ -537,5 +540,39 @@
     color: #dc3545;
 }
 .storyText {
-    line-height: 20px;
+    line-height: calc(20px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
+}
+@media only screen and (max-width: 1000px) {
+    .grid {
+        grid-template-columns: 1fr; 
+        grid-auto-rows: auto; 
+        grid-column-gap: 0px;
+        grid-row-gap: 30px;
+    }
+    .gridItem:nth-child(1) {
+        display: none;
+    }
+    .gridItem:nth-child(2) {
+        grid-column: 1/2;
+    }
+    .gridItem:nth-child(3) {
+        grid-column: 1/2;
+        position: relative;
+    }
+    .headerArea {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+    .ratingArea {
+        justify-content: start;
+        width: auto;
+    }
+    .layout {
+        padding: 0px;
+    }
+    .genres {
+        flex-wrap: wrap;
+    }
 }

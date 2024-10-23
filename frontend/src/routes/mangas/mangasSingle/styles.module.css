@@ -1,7 +1,7 @@
 .parentGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 30px;
+    grid-column-gap: calc(30px * var(--app-scale));
 }
 .parentGridItem:nth-child(1) {
     grid-column: 1/4;
@@ -9,50 +9,50 @@
 .parentGridItem:nth-child(2) {
     grid-column: 4/5;
     position: sticky;
-    top: 90px;
+    top: calc(90px * var(--app-scale));
     height: 100vh;
 }
 
 .moviesTextAreaStars {
-    transform: translateX(-1px);
-    margin-top: 4px;
+    transform: translateX(calc(-1px * var(--app-scale)));
+    margin-top: calc(4px * var(--app-scale));
 }
 .moviesTextAreaStars svg {
     color: #FDC83E;
-    font-size: 17px;
-    margin-right: -2px;
+    font-size: calc(17px * var(--app-scale));
+    margin-right: calc(-2px * var(--app-scale));
 }
 
 .headerAreaTitle {
-    font-size: 2rem;
+    font-size: calc(2rem * var(--app-scale));
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: calc(5px * var(--app-scale));
 }
 
 .line {
-    height: 1px;
+    height: calc(1px * var(--app-scale));
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
-    margin-top: 25px;
-    margin-bottom: 30px;
+    margin-top: calc(25px * var(--app-scale));
+    margin-bottom: calc(30px * var(--app-scale));
 }
 .line1 {
-    height: 1px;
+    height: calc(1px * var(--app-scale));
     background-image: linear-gradient(90deg,rgba(0,0,0,0.00) 0%,#000000 50%,rgba(0,0,0,0.00) 100%);
     opacity: .1;
     width: 100%;
-    margin: 15px 0px;
+    margin: calc(15px * var(--app-scale)) 0px;
 }
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr [col-start]);
-    grid-column-gap: 30px;
+    grid-column-gap: calc(30px * var(--app-scale));
 }
 .gridItem:nth-child(1) {
     grid-column: 1/2;
     position: sticky;
-    top: 100px;
+    top: calc(100px * var(--app-scale));
     height: 70vh;
 }
 .gridItem:nth-child(2) {
@@ -62,42 +62,43 @@
 .stickyImage {
     width: 100%;
     height: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    object-fit: cover;
 }
 
 .genres {
     display: flex;
-    gap: 8px;
+    gap: calc(8px * var(--app-scale));
     align-items: center;
 }
 .genres button {
-    height: 30px;
-    border-radius: 0.5rem;
+    height: calc(30px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
-    padding: 0px 8px;
+    padding: 0px calc(8px * var(--app-scale));
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
 }
 .genres button:hover {
     background-color: #FF5C58;
 }
 .shareLogos {
     display: flex;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    gap: 8px;
+    margin-top: calc(25px * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
+    gap: calc(8px * var(--app-scale));
 }
 .shareLogos svg:nth-child(1) {
     background-color: #dd3333;
     border-radius: 50%;
     color: white;
-    width: 28px;
-    height: 28px;
-    padding: 4px;
+    width: calc(28px * var(--app-scale));
+    height: calc(28px * var(--app-scale));
+    padding: calc(4px * var(--app-scale));
     cursor: pointer;
 }
 .shareLogos svg:hover {
@@ -107,15 +108,16 @@
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
     border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .features tr {
-    border-spacing: 5em;
+    border-spacing: calc(5em * var(--app-scale));
 }
 .features td, .features th {
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(1.5rem * var(--app-scale));
 }
 .features tr:last-child td, .features tr:last-child th {
     padding-bottom: 0px;
@@ -129,149 +131,152 @@
 .story {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
 }
 .storyTitle {
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
     font-weight: bold;
 }
 .story div:nth-child(2) {
-    margin: 1rem 0rem;
+    margin: calc(1rem * var(--app-scale)) 0rem;
+    font-size: calc(14px * var(--app-scale));
 }
 .story button {
-    height: 30px;
-    border-radius: 0.5rem;
+    height: calc(30px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
-    padding: 0px 8px;
+    padding: 0px calc(8px * var(--app-scale));
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: calc(4px * var(--app-scale));
 }
 .story button:hover {
     background-color: #FF5C58;
 }
 .storyText {
-    line-height: 20px;
+    line-height: calc(20px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .ratingEntries {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    padding: 1rem;
-    margin-bottom: 20px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    padding: calc(1rem * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .ratingEntriesHeader {
-    font-size: 18px;
+    font-size: calc(18px * var(--app-scale));
     font-weight: bold;
 }
 .ratingEntriesTitle {
-    font-size: 16px;
+    font-size: calc(16px * var(--app-scale));
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: calc(1rem * var(--app-scale));
 }
 .ratingAndDateArea {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: calc(15px * var(--app-scale));
 }
 
 .ratingAndDateAreaStars {
-    transform: translateX(-1px);
+    transform: translateX(calc(-1px * var(--app-scale)));
 }
 .ratingAndDateAreaStars svg {
     color: #FDC83E;
-    font-size: 23px;
-    margin-right: -3px;
+    font-size: calc(23px * var(--app-scale));
+    margin-right: calc(-3px * var(--app-scale));
 }
 .ratingAndDateAreaDate {
-    font-size: 11.5px;
-    transform: translateY(-2px);
+    font-size: calc(11.5px * var(--app-scale));
+    transform: translateY(calc(-2px * var(--app-scale)));
 }
 .ratingAndDateAreaReview {
-    padding: 10px 0px;
+    padding: calc(10px * var(--app-scale)) 0px;
 }
 .ratingEntriesAuthorArea {
     display: flex;
     align-items: center;
-    padding-top: 10px
+    padding-top: calc(10px * var(--app-scale));
 }
 .ratingEntriesAuthorArea img {
-    margin-right: 12px;
+    margin-right: calc(12px * var(--app-scale));
     border-radius: 50%;
 }
 .ratingEntriesAuthorArea div:nth-child(2) {
-    transform: translateY(-2px);
+    transform: translateY(calc(-2px * var(--app-scale)));
     font-weight: bold;
 }
 .review {
     padding-top: 0px;
 }
 .stars {
-    height: 16px;
+    height: calc(16px * var(--app-scale));
     padding: 0;
-    margin-top: 3px;
-    margin-bottom: 26px;
-    transform: translateX(-3px);
+    margin-top: calc(3px * var(--app-scale));
+    margin-bottom: calc(26px * var(--app-scale));
+    transform: translateX(calc(-3px * var(--app-scale)));
 }
 .stars svg {
     color: #FDC83E;
-    font-size: 2rem;
-    margin-right: -1px;
+    font-size: calc(2rem * var(--app-scale));
+    margin-right: calc(-1px * var(--app-scale));;
     cursor: pointer;
 }
 .review input {
     width: 100%;
-    border: 1px solid #dbdbdb;
-    font-size: 15px;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
+    font-size: calc(15px * var(--app-scale));
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
+    margin-bottom: calc(10px * var(--app-scale));
+    margin-top: calc(5px * var(--app-scale));
     transition: box-shadow 0.3s ease; 
 }
 .review input:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);;
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);;
 }
 .review textarea {
-    font-size: 15px;
+    font-size: calc(15px * var(--app-scale));
     width: 100%;
-    border: 1px solid #dbdbdb;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
     transition: box-shadow 0.3s ease;
-    height: 120px;
-    margin-top: 5px;
-    margin-bottom: 1em;
+    height: calc(120px * var(--app-scale));
+    margin-top: calc(5px * var(--app-scale));
+    margin-bottom: calc(1em * var(--app-scale));
     resize: vertical;
 }
 .review textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);
 }
 .review button {
-    margin-top: 10px;
+    margin-top: calc(10px * var(--app-scale));
     background-color: #007bff;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    border-radius: calc(0.5rem * var(--app-scale));
+    font-size: calc(1rem * var(--app-scale));
     transition: .2s ease-in-out;
     cursor: pointer;
     border: none;
     color: white;
-    height: 40px;
-    padding: 0px 15px;
+    height: calc(40px * var(--app-scale));
+    padding: 0px calc(15px * var(--app-scale));
     width: 30%;
 }
 .review button:hover {
@@ -279,41 +284,41 @@
 }
 .input {
     width: 100%;
-    border: 1px solid #dbdbdb;
-    font-size: 15px;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
+    font-size: calc(15px * var(--app-scale));
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
-    margin-bottom: 1.2em;
-    margin-top: 8px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
+    margin-bottom: calc(1.2em * var(--app-scale));
+    margin-top: calc(8px * var(--app-scale));
     transition: box-shadow 0.3s ease; 
 }
 .input option {
     padding: 0px;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
 }
 .input:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);
 }
 .label {
     font-weight: bold;
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: calc(1rem * var(--app-scale));
+    line-height: calc(1rem * var(--app-scale));
 }
 .sticky select {
-    padding-left: 8px;
+    padding-left: calc(8px * var(--app-scale));
     background-color: #F1F1F1;
 }
 .bottomImage {
     width: 100%;
-    border-radius: .5rem;
-    margin-top: 5px
+    border-radius: calc(0.5rem * var(--app-scale));;
+    margin-top: calc(5px * var(--app-scale))
 }
 .modal {
     position: fixed; 
     z-index: 99999; 
-    padding: 30px 280px;
+    padding: calc(30px * var(--app-scale)) calc(280px * var(--app-scale));
     left: 0;
     top: 0;
     width: 100%;
@@ -325,33 +330,33 @@
     padding-top: 0px;
 }
 .showTextModal {
-    padding-top: 30px;
+    padding-top: calc(30px * var(--app-scale));
     visibility: visible;
     opacity: 1;
 }
 
 .modalContent {
     overflow: auto;
-    max-height: calc(100vh - 60px);
-    border-radius: 0.5rem;
+    max-height: calc(100vh - calc(60px * var(--app-scale)));
+    border-radius: calc(0.5rem * var(--app-scale));
     background-color: #fefefe;
     margin: auto;
-    padding: 10px 20px;
+    padding: calc(10px * var(--app-scale)) calc(20px * var(--app-scale));
 }
 
 .modalHeaderArea {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top-right-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
+    border-top-right-radius: calc(0.5rem * var(--app-scale));
+    border-top-left-radius: calc(0.5rem * var(--app-scale));
 }
 .modalTitle {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: calc(1.5rem * var(--app-scale));
 }
 .modalCloseBtn {
-    font-size: 24px;
+    font-size: calc(24px * var(--app-scale));
     transform: translateX(4px);
     cursor: pointer;
 }
@@ -360,18 +365,60 @@
 }
 .modalPhoto {
     width: 100%;
-    border-radius: 0.5rem;
-    margin-top: 30px;
+    border-radius: calc(0.5rem * var(--app-scale));
+    margin-top: calc(30px * var(--app-scale));
 }
 .modalText {
-    padding: 10px;
-    line-height: 1.4rem;
+    padding: calc(10px * var(--app-scale));
+    line-height: calc(1.4rem * var(--app-scale));
 }
 .showMore {
     font-weight: 600;
-    margin-left: 5px;
+    margin-left: calc(5px * var(--app-scale));
     cursor: pointer;
 }
 .showMore:hover {
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 1000px) {
+    .parentGrid {
+        grid-template-columns: 1fr; 
+        grid-auto-rows: auto; 
+        grid-column-gap: 0px;
+        grid-row-gap: 30px;
+    }
+    .parentGridItem:nth-child(1) {
+        grid-column: 1/4;
+        padding: 0rem 2rem;
+    }
+    .parentGridItem:nth-child(2) {
+        grid-column: 1/2;
+        padding: 0rem 2rem;
+        height: auto;
+        width: 100%;
+    }
+    .genres { 
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .parentGridItem {
+        padding: 0!important;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 30px;
+    }
+    .gridItem:nth-child(1) {
+        grid-column: 1/4;
+        padding: 0rem 0;
+        position: unset;
+    }
+    .gridItem:nth-child(2) {
+        grid-column: 1/2;
+        padding: 0rem 0;
+    }
 }

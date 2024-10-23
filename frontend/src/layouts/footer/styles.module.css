@@ -66,6 +66,12 @@
     width: 100%;;
 }
 
+@media only screen and (max-width: 1000px) {
+    .footer {
+        padding: 1rem 0.85rem 1rem 0.85rem;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .footer {
         padding: 1rem 1rem 1rem 1rem;
@@ -78,7 +84,7 @@
     .item {
         width: 100%;
     }
-    .item:nth-child(1) {
-        padding-left: calc(1.2rem * var(--app-scale));
+    .item {
+        padding-left: 0;
     }
 }

@@ -4,7 +4,7 @@
 }
 .container .firstItem {
     width: 33%;
-    padding: 35px 0px;
+    padding: calc(35px * var(--app-scale)) 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,44 +12,44 @@
 }
 .container .secondItem {
     width: 67%;
-    margin-left: 35px;
+    margin-left: calc(35px * var(--app-scale));
 }
 .container .secondItem img {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
 }
 .form {
-    box-shadow: 0 0 0 0.5px rgb(0 20 40 / 10%), 0 2px 8px 0 rgb(50 55 90 / 20%);
-    border-radius: 10px;
+    box-shadow: 0 0 0 calc(0.5px * var(--app-scale)) rgb(0 20 40 / 10%), 0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) 0 rgb(50 55 90 / 20%);
+    border-radius: calc(10px * var(--app-scale));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.5rem;
+    padding: calc(1.5rem * var(--app-scale));
     width: 100%;
     background-color: white;
 }
 .form input {
     width: 100%;
-    border: 1px solid #dbdbdb;
-    font-size: 14px;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
+    font-size: calc(14px * var(--app-scale));
     color: #69717a;
-    padding: 10px 15px;
-    border-radius: 6px;
-    margin-bottom: 1em;
+    padding: calc(10px * var(--app-scale)) calc(15px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
+    margin-bottom: calc(1em * var(--app-scale));
     transition: box-shadow 0.3s ease; 
 }
 .form input:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);;
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);;
 }
 .form button {
     background: #dd3333;
     border: none;
-    font-size: 15px;
+    font-size: calc(15px * var(--app-scale));
     font-weight: bold;
     color: white;
-    border-radius: 6px;
-    padding: 15px 0;
+    border-radius: calc(6px * var(--app-scale));
+    padding: calc(15px * var(--app-scale)) 0;
     cursor: pointer;
 }
 .form button:hover {
@@ -61,12 +61,12 @@
     display: flex;
     justify-content: center;
     color: #69717A;
-    margin-top: 20px;
-    font-size: 13px;
+    margin-top: calc(20px * var(--app-scale));
+    font-size: calc(13px * var(--app-scale));
 }
 .firstItem .linksArea div {
-    margin-right: 3px;
-    margin-left: 3px;
+    margin-right: calc(3px * var(--app-scale));
+    margin-left: calc(3px * var(--app-scale));
     color: #6f7983;
 }
 .firstItem a {
@@ -80,10 +80,10 @@
 .header {
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: calc(25px * var(--app-scale));
     width: 100%;
     font-weight: 700;
-    font-size: 20px;
+    font-size: calc(20px * var(--app-scale));
     font-family: 'IBM Plex Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
     color: #444444;
 }
@@ -91,13 +91,13 @@
     position: relative;
 }
 .relative svg {
-    width: 20px;
-    height: 20px;
+    width: calc(20px * var(--app-scale));
+    height: calc(20px * var(--app-scale));
     position: absolute;
     right: 0;
     top: 0;
     cursor: text;
-    margin: 15px 12px 0 0;
+    margin: calc(15px * var(--app-scale)) calc(12px * var(--app-scale)) 0 0;
     color: rgb(102, 102, 102)
 }
 .relative:nth-child(3) svg {
@@ -106,10 +106,24 @@
 .error {
     width: 100%;
     text-align: center;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: calc(10px * var(--app-scale));
+    border-radius: calc(5px * var(--app-scale));
     background-color: #e74c3c;
     color: white;
-    padding: 12px 0px;
-    font-size: 17px;
+    padding: calc(12px * var(--app-scale)) 0px;
+    font-size: calc(17px * var(--app-scale));
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .container .firstItem {
+        width: 100%;
+    }
+    .container .secondItem {
+        width: 100%;
+        margin-left: 0;
+        order: -1;
+    }
 }
