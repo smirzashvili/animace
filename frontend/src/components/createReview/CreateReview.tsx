@@ -140,8 +140,8 @@ const CreateReview: React.FC<{darkMode: boolean}> = ({darkMode}) => {
             />
             {errors.email?.type === "required" && <div className={styles.error}>This field is required</div>}
             {errors.email?.type === "validate" && <div className={styles.error}>This field requires a valid e-mail address.</div>}
-            <div className={styles.flex}>
-                <div style={{"height": "25px"}}>   
+            <div className={styles.flex} style={{"alignItems": "flex-start"}}>
+                <div>   
                     <input 
                         type="checkbox" 
                         id="checkbox"

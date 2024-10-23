@@ -1,24 +1,24 @@
 .noData {
-    font-size: 1.25rem;
+    font-size: calc(1.25rem * var(--app-scale));
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: calc(10px * var(--app-scale));
 }
 
 .noDataButton {
     transition: 0.2s;
     background-color: #dd3333;
     color: white;
-    border-radius: 0.5rem;
+    border-radius: calc(0.5rem * var(--app-scale));
     border: none;
-    padding: 0.3rem 0.5rem 0.3rem 0.2rem;
-    font-size: .875rem;
+    padding: calc(0.3rem * var(--app-scale)) calc(0.5rem * var(--app-scale)) calc(0.3rem * var(--app-scale)) calc(0.2rem * var(--app-scale));
+    font-size: calc(0.875rem * var(--app-scale));
     cursor: pointer;
 }
 .noDataButton svg {
-    width: 20px;
-    height: 20px;
+    width: calc(20px * var(--app-scale));
+    height: calc(20px * var(--app-scale));
     vertical-align: middle;
-    transform: translateY(-1px);
+    transform: translateY(calc(-1px * var(--app-scale)));
 }
 .noDataButton:hover {
     background-color: #FF5C58;

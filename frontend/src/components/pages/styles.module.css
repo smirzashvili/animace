@@ -13,7 +13,7 @@
 .pages button:last-child svg {
     width: calc(22px * var(--app-scale));
     height: calc(22px * var(--app-scale));
-    transform: translateX(1px);
+    transform: translateX(calc(1px * var(--app-scale)));
 }
 .pages button {
     font-size: calc(17px * var(--app-scale));
@@ -33,5 +33,5 @@
     color: #ababab;
 }
 .pageButtons p {
-    transform: translateY(-1px);
+    transform: translateY(calc(-1px * var(--app-scale)));
 }

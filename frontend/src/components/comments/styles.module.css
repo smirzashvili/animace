@@ -1,9 +1,10 @@
 .commentsArea {
-    margin: 10px 0px;
+    margin: calc(10px * var(--app-scale)) 0px;
+    font-size: calc(14px * var(--app-scale));
 }
 .cancelReply {
-    margin-left: 4px;
-    font-size: 1.1rem;
+    margin-left: calc(4px * var(--app-scale));
+    font-size: calc(1.1rem * var(--app-scale));
     font-weight: 400;
     cursor: pointer;
 }
@@ -11,40 +12,40 @@
     opacity: 0.8;
 }
 .CommentsHeader {
-    font-size: 1.5rem;
+    font-size: calc(1.5rem * var(--app-scale));
     font-weight: bold;
-    margin-top: -10px;
+    margin-top: calc(-10px * var(--app-scale));
 }
 .Comment {
     display: flex;
-    gap: 35px;
-    padding: 15px 0px;
+    gap: calc(35px * var(--app-scale));
+    padding: calc(15px * var(--app-scale)) 0px;
 }
 .Comment img {
-    width: 36px;
-    height: 36px;
+    width: calc(36px * var(--app-scale));
+    height: calc(36px * var(--app-scale));
     border-radius: 50%;
 }
 .CommentArea {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
     background-color: #f8f7ff;    
     width: 100%;
     height: auto;
-    padding: 15px 15px;
-    border-radius: 0.5rem;
-    padding-bottom: 30px;
+    padding: calc(15px * var(--app-scale)) calc(15px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
+    padding-bottom: calc(30px * var(--app-scale));
 }
 .CommentArea button {
-    width: 55px;
-    height: 30px;
-    border-radius: 0.5rem;
+    width: calc(55px * var(--app-scale));
+    height: calc(30px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    margin-bottom: 15px;
-    font-size: 14px;
+    margin-bottom: calc(15px * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 .CommentArea button:hover {
     background-color: #FF5C58;
@@ -52,66 +53,81 @@
 
 .CommentArea div:nth-child(1) {
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: calc(15px * var(--app-scale));
 }
 .CommentArea div:last-child {
     font-weight: 400;
     opacity: 0.9;
 }
 .postButt {
-    height: 40px;
-    border-radius: 0.5rem;
+    height: calc(40px * var(--app-scale));
+    border-radius: calc(0.5rem * var(--app-scale));
     cursor: pointer;
     color: white;
     background-color: #dd3333;
     border: none;
     transition: .2s ease-in-out;
-    margin-bottom: 15px;
+    margin-bottom: calc(15px * var(--app-scale));
     width: 100%;
-    font-size: 15px;
+    font-size: calc(15px * var(--app-scale));
 }
 .postButt:hover {
     background-color: #FF5C58;
 }
 .leaveReplyHeader {
-    margin-top: -10px;
-    font-size: 1.5rem;
+    margin-top: calc(-10px * var(--app-scale));
+    font-size: calc(1.5rem * var(--app-scale));
     font-weight: bold;
 }
 .leaveReplyWarner {
-    padding: 10px 0px;
+    padding: calc(10px * var(--app-scale)) 0px;
 }
 .leaveReplyInput, .leaveReplyTextarea {
     width: 100%;
-    border: 1px solid #dbdbdb;
-    font-size: 15px;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
+    font-size: calc(15px * var(--app-scale));
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
-    margin-bottom: 1.2em;
-    margin-top: 5px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
+    margin-bottom: calc(1.2em * var(--app-scale));
+    margin-top: calc(5px * var(--app-scale));
     transition: box-shadow 0.3s ease;
     background-color: #F1F1F1; 
 }
 .leaveReplyInput:focus, .leaveReplyTextarea:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);
 }
 .leaveReplyTextarea {
-    height: 200px;
+    height: calc(200px * var(--app-scale));
     resize: vertical;
 }
 .nameAndEmailArea {
     display: flex;
-    gap: 1.2em;
+    gap: calc(1.2em * var(--app-scale));
 }
 .nameAndEmailArea div {
     width: 100%;
 }
 .leaveReplyArea {
-    margin-bottom: 50px;
+    margin-bottom: calc(50px * var(--app-scale));
 }
 .error {
-    margin-bottom: 10px;
+    margin-bottom: calc(10px * var(--app-scale));
     color: red;
+}
+
+@media only screen and (max-width: 400px) {
+    .commentsArea {
+        font-size: 12px;
+    }
+    .CommentArea {
+        padding: 15px 5px;
+    }
+    .Comment {
+        gap: 10px;
+    }
+    .Comment.isReply {
+        margin-left: 15px!important;
+    }
 }

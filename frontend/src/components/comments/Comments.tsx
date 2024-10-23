@@ -118,7 +118,7 @@ const Comments: React.FC<{darkMode: boolean, info: IReview | IArticle }> = ({dar
                 return (
                     <div 
                     style={{"marginLeft": item.index * 40 + "px"}} 
-                    className={styles.Comment}
+                    className={`${styles.Comment} ${item.index > 0 ? styles.isReply : ''}`}
                     >
                         {
                             item.author ? 

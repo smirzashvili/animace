@@ -1,88 +1,89 @@
 .review {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(249, 249, 252) 50%, rgba(255,255,255,1) 100%);    
-    padding: 1rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
-    border-radius: 0.5rem;
+    padding: calc(1rem * var(--app-scale));
+    box-shadow: 0 calc(0.125rem * var(--app-scale)) calc(0.25rem * var(--app-scale)) rgba(0,0,0,.075);
+    border-radius: calc(0.5rem * var(--app-scale));
+    font-size: calc(14px * var(--app-scale));
 }
 form label {
-    padding-top: 10px;
+    padding-top: calc(10px * var(--app-scale));
 }
 .stars {
-    height: 16px;
+    height: calc(16px * var(--app-scale));
     padding: 0;
-    margin-bottom: 25px;
-    transform: translateX(-3px);
+    margin-bottom: calc(25px * var(--app-scale));
+    transform: translateX(calc(-3px * var(--app-scale)));
 }
 .stars svg {
-    font-size: 2rem;
-    margin-right: -1px;
+    font-size: calc(2rem * var(--app-scale));
+    margin-right: calc(-1px * var(--app-scale));
     cursor: pointer;
 }
 form input {
     width: 100%;
-    border: 1px solid #dbdbdb;
-    font-size: 15px;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
+    font-size: calc(15px * var(--app-scale));
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
-    margin-bottom: 1em;
-    margin-top: 5px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
+    margin-bottom: calc(1em * var(--app-scale));
+    margin-top: calc(5px * var(--app-scale));
     transition: box-shadow 0.3s ease; 
 }
 form input:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);;
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);;
 }
 form textarea {
-    font-size: 15px;
+    font-size: calc(15px * var(--app-scale));
     width: 100%;
-    border: 1px solid #dbdbdb;
+    border: calc(1px * var(--app-scale)) solid #dbdbdb;
     color: #69717a;
-    padding: 10px 12px;
-    border-radius: 6px;
+    padding: calc(10px * var(--app-scale)) calc(12px * var(--app-scale));
+    border-radius: calc(6px * var(--app-scale));
     transition: box-shadow 0.3s ease;
-    height: 120px;
-    margin-top: 5px;
-    margin-bottom: 1em;
+    height: calc(120px * var(--app-scale));
+    margin-top: calc(5px * var(--app-scale));
+    margin-bottom: calc(1em * var(--app-scale));
     resize: vertical;
 }
 form textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 1.5px rgb(133, 133, 133);
+    box-shadow: 0 0 0 calc(1.5px * var(--app-scale)) rgb(133, 133, 133);
 }
 .createComm {
-    margin-top: 5px;
+    margin-top: calc(5px * var(--app-scale));
     background-color: #007bff;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    border-radius: calc(0.5rem * var(--app-scale));
+    font-size: calc(1rem * var(--app-scale));
     transition: .2s ease-in-out;
     cursor: pointer;
     border: none;
     color: white;
-    height: 40px;
-    padding: 0px 15px;
+    height: calc(40px * var(--app-scale));
+    padding: 0px calc(15px * var(--app-scale));
 }
 .createComm:hover {
     background-color: #0069D9;
 }
 .flex {
-    margin: 5px 10px;
+    margin: calc(5px * var(--app-scale)) calc(10px * var(--app-scale));
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: calc(10px * var(--app-scale));
+    margin-bottom: calc(15px * var(--app-scale));
 }
 .flex input {
-    width: 20px;
-    height: 20px;
+    width: calc(20px * var(--app-scale));
+    height: calc(20px * var(--app-scale));
     box-shadow: 0px 0px 0px 0px white!important; 
     cursor: pointer;  
 }
 .flex label {
-    font-size: 13px;
+    font-size: calc(13px * var(--app-scale));
     cursor: pointer;
 }
 .error {
     color: #e02424;
-    transform: translateY(-10px);
+    transform: translateY(calc(-10px * var(--app-scale)));
 }
