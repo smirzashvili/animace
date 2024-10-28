@@ -459,18 +459,101 @@
   line-height: calc(1.2rem * var(--app-scale));
 }
 
+@media only screen and (max-width: 1500px) {
+  .grid1 .carousel__slide {
+    height: 300px!important;
+  }
+  .grid1 .carousel__slider {
+    height: 375px!important;
+  }
+  .grid1 .carousell3 .carousel__slide {
+    height: auto!important;
+  }
+}
 
 @media only screen and (max-width: 1000px) {
   .carousell {
-    width: calc(100% - calc(1rem * var(--app-scale))); 
-    left: calc(1rem * var(--app-scale));
+    /* width: calc(100% - calc(1rem * var(--app-scale))); 
+    left: calc(1rem * var(--app-scale)); */
   }
   .innerSlide {
-    width: calc(100% - calc(1rem * var(--app-scale)));     
+    /* width: calc(100% - calc(1rem * var(--app-scale)));      */
   }
   .buttons {
-    transform: translate(calc(-1rem * var(--app-scale)), calc(-2.4rem * var(--app-scale)));
+    /* transform: translate(calc(-1rem * var(--app-scale)), calc(-2.4rem * var(--app-scale))); */
+  }
+  .grid1 .gridItem:nth-child(2) {
+    display: none;
   }
 
-  
+  .grid1 {
+    grid-template-columns: repeat(2, 1fr [col-start]);
+    grid-template-rows: repeat(3, 1fr [col-start]);
+  }
+  .grid1 .carousel__slider {
+    height: auto!important;
+  }
+  .grid1 .carousel__slide {
+    height: 383px !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .reviewsTextArea {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+.carousell, .carousell1, .carousell3, .carousell4 {
+  width: 102%;
+}
+
+.carousell .buttons, .carousell1 .buttons, .carousell3 .buttons, .carousell4 .buttons {
+  right: 2.2rem;
+}
+@media only screen and (max-width: 1500px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 103%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 104%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 104%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 105%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 106%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 108%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 109%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carousell, .carousell1, .carousell3, .carousell4 {
+    width: 110%;
+  }
 }

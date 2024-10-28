@@ -56,14 +56,25 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
   const {mangas} = useSelector((state: RootState) => state.MangasReducer)
   const {reviews} = useSelector((state: RootState) => state.ReviewsReducer)
 
-  const [visibleSlides, setVisibleSlides] = useState(2);
+  const [visibleSlides, setVisibleSlides] = useState(1);
+  const [visibleSlides1, setVisibleSlides1] = useState(2);
+  const [visibleSlides2, setVisibleSlides2] = useState(2);
+  const [visibleSlides3, setVisibleSlides3] = useState(2);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1000) {
+      if(window.innerWidth < 500) {
+        setVisibleSlides1(1);
+        setVisibleSlides2(2);
+        setVisibleSlides2(2)
+      } else if (window.innerWidth < 1000) {
         setVisibleSlides(1);
+        setVisibleSlides1(2);
+        setVisibleSlides2(3)
       } else {
         setVisibleSlides(2);
+        setVisibleSlides1(3);
+        setVisibleSlides2(4)
       }
     };
 
@@ -121,7 +132,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               </div>
           </CarouselProvider>
         </div>
-      <div className='grid1'>
+      <div className='grid1' style={{'display': 'none'}}>
         <div className='gridItem'>
           <div className='header'>
             <div className='headerText'>Latest articles</div>
@@ -133,7 +144,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               naturalSlideHeight={105}
               totalSlides={5}
               playDirection='forward'
-              visibleSlides={3}
+              visibleSlides={visibleSlides1}
               infinite={true}
               >
               <div className='buttons'>
@@ -309,7 +320,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 naturalSlideHeight={95}
                 totalSlides={categories.slice(1, 7).length}
                 playDirection='forward'
-                visibleSlides={4}
+                visibleSlides={visibleSlides2}
                 infinite={true}
                 >
                 <div className='buttons'>
