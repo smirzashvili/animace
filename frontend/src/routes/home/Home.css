@@ -354,6 +354,14 @@
 .moviesTextAreaHeader:hover{
   opacity: 0.8
 }
+.moviesTextAreaHeader a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;   
+  max-width: 100%;        
+}
 .moviesTextAreaYear {
   font-size: calc(11px * var(--app-scale));
 }
@@ -439,6 +447,14 @@
 .image4Header:hover {
   opacity: 0.8
 }
+.image4Header a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;   
+  max-width: 100%;
+}
 .image4Year {
   font-size: calc(11px * var(--app-scale));;
 }
@@ -496,6 +512,17 @@
   .grid1 .carousel__slide {
     height: 383px !important;
   }
+
+  .moviesFlex {
+    flex-direction: column;
+  }
+
+  /* .grid2 .carousel__slider {
+    height: auto!important;
+  }
+  .grid2 .carousel__slide {
+    height: 283px !important;
+  } */
 }
 
 @media only screen and (max-width: 500px) {

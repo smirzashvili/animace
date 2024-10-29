@@ -67,14 +67,17 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
         setVisibleSlides1(1);
         setVisibleSlides2(2);
         setVisibleSlides2(2)
+        setVisibleSlides3(1)
       } else if (window.innerWidth < 1000) {
         setVisibleSlides(1);
         setVisibleSlides1(2);
         setVisibleSlides2(3)
+        setVisibleSlides3(2)
       } else {
         setVisibleSlides(2);
         setVisibleSlides1(3);
         setVisibleSlides2(4)
+        setVisibleSlides3(6)
       }
     };
 
@@ -132,7 +135,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               </div>
           </CarouselProvider>
         </div>
-      <div className='grid1' style={{'display': 'none'}}>
+      <div className='grid1'>
         <div className='gridItem'>
           <div className='header'>
             <div className='headerText'>Latest articles</div>
@@ -438,7 +441,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   naturalSlideHeight={145}
                   totalSlides={9}
                   playDirection='forward'
-                  visibleSlides={6}
+                  visibleSlides={visibleSlides3}
                   infinite={true}
                   >
                   <div className='buttons'>
@@ -491,7 +494,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   naturalSlideHeight={145}
                   totalSlides={9}
                   playDirection='forward'
-                  visibleSlides={6}
+                  visibleSlides={visibleSlides3}
                   infinite={true}
                   >
                   <div className='buttons'>
@@ -543,7 +546,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   naturalSlideHeight={145}
                   totalSlides={9}
                   playDirection='forward'
-                  visibleSlides={6}
+                  visibleSlides={visibleSlides3}
                   infinite={true}
                   >
                   <div className='buttons'>
