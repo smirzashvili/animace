@@ -100,7 +100,7 @@
   margin-top: calc(50px * var(--app-scale));
   display: grid;
   grid-template-columns: repeat(3, 1fr [col-start]);
-  grid-template-rows: repeat(5, 1fr [col-start]);
+  grid-template-rows: repeat(5, auto [col-start]);
   grid-column-gap: calc(20px * var(--app-scale));
   grid-row-gap: calc(20px * var(--app-scale));
 }
@@ -517,9 +517,10 @@
     flex-direction: column;
   }
 
-  /* .grid2 .carousel__slider {
-    height: auto!important;
-  }
+  /* .grid2 .carousel__slider { 
+    height: 680px!important;
+  } */
+  /*
   .grid2 .carousel__slide {
     height: 283px !important;
   } */
