@@ -61,9 +61,9 @@ const SearchSideBar = () => {
             onChange={(e) => handleSelect(e.target.value, "categories")}
         >
             <option style={{"display": "none"}} selected>Select Category</option>
-            {categories?.map((item: ICategory) => {
+            {categories?.map((item: ICategory, i: number) => {
                 return (
-                <option value={transformToUrl(item.title)}>{item.title}</option>
+                <option key={i} value={transformToUrl(item.title)}>{item.title}</option>
                 )
             })}
         </select>
@@ -73,9 +73,9 @@ const SearchSideBar = () => {
             onChange={(e) => handleSelect(e.target.value, "genres")}
         >
             <option style={{"display": "none"}} selected>Select Genre</option>
-            {genres?.map((item: IGenre) => {
+            {genres?.map((item: IGenre, i: number) => {
                 return (
-                <option value={transformToUrl(item.title)}>{item.title}</option>
+                <option key={i} value={transformToUrl(item.title)}>{item.title}</option>
                 )
             })}
         </select>

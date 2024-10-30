@@ -132,8 +132,8 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 <div className={styles.gridItem}>
                     <div className={styles.genres}>
                         <div className={styles.genresId}>{serieInfo.mpaa}</div>
-                        {serieInfo.genre?.map((item: ISerie) => {
-                            return <a href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
+                        {serieInfo.genre?.map((item: ISerie, i: number) => {
+                            return <a key={i} href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
                         })}
                     </div>
                     <table style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.features}>
@@ -189,12 +189,12 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                 </div>
                                 <img className={styles.modalPhoto} src={serieInfo.subphoto} alt='a' />
                                 {
-                                serieInfo.fullStory?.split('\n').map((item: string) => {
+                                serieInfo.fullStory?.split('\n').map((item: string, i: number) => {
                                     if(item === "") {
-                                        return <br/>
+                                        return <br key={i}/>
                                       } 
                                       else {
-                                        return <p className={styles.modalText}>{item}</p>
+                                        return <p key={i} className={styles.modalText}>{item}</p>
                                       }
                                 })
                                 }
@@ -207,9 +207,9 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                             <div className={styles.staffAndCastHeader}>Staff</div>
                             <div className={styles.line1}></div>
                             {
-                                serieInfo.staff?.map((item: IStaff) => {
+                                serieInfo.staff?.map((item: IStaff, i: number) => {
                                     return (
-                                        <div className={styles.singleStaffAndCast}>
+                                        <div key={i} className={styles.singleStaffAndCast}>
                                             <a href={`../../staff/${transformToUrl(item.staff?.fullName)}`}>
                                                 <img alt='a' src={item.staff?.photo}/>
                                             </a>
@@ -217,8 +217,8 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                                 <a href={`../../staff/${transformToUrl(item.staff?.fullName)}`}>
                                                     <div>{item.staff?.fullName}</div>
                                                 </a>
-                                                {item.role.split('&').map((item: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined) => {
-                                                    return <div className={styles.role}>{item}</div>
+                                                {item.role.split('&').map((item: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined, i: number) => {
+                                                    return <div key={i} className={styles.role}>{item}</div>
                                                 })}
                                             </div>
                                         </div>
@@ -231,9 +231,9 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                             <div className={styles.staffAndCastHeader}>Cast</div>
                             <div className={styles.line1}></div>
                             {
-                                serieInfo.actors?.map((item: IActor) => {
+                                serieInfo.actors?.map((item: IActor, i: number) => {
                                     return (
-                                        <div className={styles.singleStaffAndCast}>
+                                        <div key={i} className={styles.singleStaffAndCast}>
                                             <a href={`../../actors/${transformToUrl(item.actor?.fullName)}`}>
                                                 <img alt='a' src={item.actor?.photo}/>
                                             </a>
@@ -241,8 +241,8 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                                 <a href={`../../actors/${transformToUrl(item.actor?.fullName)}`}>
                                                     <div>{item.actor?.fullName}</div>
                                                 </a>
-                                                {item.role?.split('&').map((item: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined) => {
-                                                    return <div className={styles.role}>{item}</div>
+                                                {item.role?.split('&').map((item: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined, i: number) => {
+                                                    return <div key={i} className={styles.role}>{item}</div>
                                                 })}
                                             </div>
                                         </div>
@@ -256,9 +256,9 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         <div className={styles.line1}></div>
                         <div className={styles.relatedMediaItems}>
                             {
-                                relatedMedia.map((item: IManga | ISerie | IMovie) => {
+                                relatedMedia.map((item: IManga | ISerie | IMovie, i: number) => {
                                     return (
-                                        <div style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
+                                        <div key={i} style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
                                             <a href={`../../${item.type}/${item.pathname}`}>
                                                 <img alt='a' src={item.photo}/>
                                             </a>
@@ -289,9 +289,9 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         <div className={styles.relatedMediaHeader}>Rating Entries</div>
                         <div className={styles.line1}></div>
                         {reviews?.filter((item: IReview) => item.about === serieInfo.title).length > 0 ?
-                        reviews?.filter((item: IReview) => item.about === serieInfo.title).map((item1: IReview) => {
+                        reviews?.filter((item: IReview) => item.about === serieInfo.title).map((item1: IReview, i: number) => {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     <div className={styles.ratingAndDateArea}>
                                         <Rating rating={item1.rating} size="medium" />
                                         <div className={styles.ratingAndDateAreaDate}>
@@ -309,7 +309,7 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><img alt='a' src={item1.author.avatar} /></a>
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><div>{item1.author.fullname}</div></a>
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })
                         :
@@ -326,9 +326,9 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         </div>
                     </div>
                     {
-                        relatedPosts.map((item: IArticle) => {
+                        relatedPosts.map((item: IArticle, i: number) => {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     <a href={`../../articles/${item.pathname}`}>
                                         <img className={styles.relatedPostsImg} alt='a' src={item?.photo} />
                                     </a>
@@ -343,7 +343,7 @@ const MoviesAndSeriesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                             <div>{item?.author?.fullname}</div>
                                         </a>
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })
                     }

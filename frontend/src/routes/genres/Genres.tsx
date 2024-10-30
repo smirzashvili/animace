@@ -21,9 +21,9 @@ const Genres = () => {
         <div className={styles.line}></div>
         <div className={styles.grid}>
             {
-                genres.map((item: IGenre) => {
+                genres.map((item: IGenre, i: number) => {
                     return (
-                        <div className={styles.gridItem}>
+                        <div key={i} className={styles.gridItem}>
                             <a href={`./genres/${transformToUrl(item.title)}`}>
                                 <img alt='a' src={item.photo}/>
                             </a>

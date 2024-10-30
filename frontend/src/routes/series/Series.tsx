@@ -44,9 +44,9 @@ const Series = () => {
         <h1 className={styles.title}>Series</h1>
         <div className={styles.line}></div>
         <div className={styles.grid}>
-          {series?.map((item: ISerie) => {
+          {series?.map((item: ISerie, i: number) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={i} className={styles.gridItem}>
                 <a href={`series/${item.pathname}`}>
                   <img alt='a' src={item.photo} />
                 </a>

@@ -51,9 +51,9 @@ const GenresSingle = () => {
       <h1 className={styles.title}>{transformToName(name as string)}</h1>
       <div className={styles.line}></div>
       <div className={styles.grid}>
-        {data?.slice(pageNumber * PAGE_SIZE, (pageNumber + 1) * PAGE_SIZE).map(item => {
+        {data?.slice(pageNumber * PAGE_SIZE, (pageNumber + 1) * PAGE_SIZE).map((item, i: number) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={i} className={styles.gridItem}>
                 <a href={`../${item.type}/${item.pathname}`}>
                   <img alt='a' src={item.photo} />
                 </a>

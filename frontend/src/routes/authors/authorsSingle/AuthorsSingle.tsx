@@ -61,9 +61,9 @@ const AuthorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
         <div className={styles.line}></div>
 
         <div className={styles.grid}>
-            {data?.map((item: IReview | IArticle) => {
+            {data?.map((item: IReview | IArticle, i: number) => {
             return (
-                <div className={styles.gridItem}>
+                <div key={i} className={styles.gridItem}>
                 <a href={`../articles/${item.pathname}`}>
                     <img alt='a' src={item.photo} />
                 </a>
@@ -72,9 +72,9 @@ const AuthorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                     <div className={styles.link}><a href={`../articles/${item.pathname}`} className={styles.gridTitle}>{item.title}</a></div>
                     <div className={styles.buttons}>
                     {
-                        item.category.map(item => {
+                        item.category.map((item, i: number) => {
                             return (
-                                <a href={`../../categories/${transformToUrl(item.title)}`}>
+                                <a key={i} href={`../../categories/${transformToUrl(item.title)}`}>
                                     <button>{item.title}</button>
                                 </a>
                             )
@@ -83,9 +83,9 @@ const AuthorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                     </div>
                     <div className={styles.buttons}>
                     {
-                        item.tag.map(item => {
+                        item.tag.map((item, i: number) => {
                             return (
-                                <a href={`../../tags/${transformToUrl(item.title)}`}>
+                                <a key={i} href={`../../tags/${transformToUrl(item.title)}`}>
                                     <button>{item.title}</button>
                                 </a>
                             )

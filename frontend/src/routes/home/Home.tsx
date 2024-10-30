@@ -5,8 +5,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 import { FaRegCommentDots } from 'react-icons/fa';
-import { AiOutlineStar } from 'react-icons/ai';
-import { AiFillStar } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { transformToUrl } from '../../utils/pathTransformation';
 import { getCategories } from '../../redux/actions/categoryActions';
@@ -91,7 +89,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
   }, []);
 
   return (
-    <>
+    <React.Fragment>
       <div className='header'>
         <div className='headerText'>Just For You</div>
       </div>
@@ -111,22 +109,22 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               </div>
               <div>
                   <Slider>
-                    <Slide className="slide" index={0}>
+                    <Slide className="slide" index={0} key={0}>
                       <div className='innerSlide'>
                       <Image className="image" src={"/assets/homeBanner1.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
-                    <Slide className="slide" index={1}>
+                    <Slide className="slide" index={1} key={1}>
                       <div className='innerSlide'>
                       <Image className="image" src={"/assets/homeBanner2.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
-                    <Slide className="slide" index={2}>
+                    <Slide className="slide" index={2} key={2}>
                       <div className='innerSlide'>
                       <Image className="image" src={"/assets/homeBanner3.jpg"} hasMasterSpinner={false} />
                       </div>
                     </Slide>
-                    <Slide className="slide" index={3}>
+                    <Slide className="slide" index={3} key={3}>
                       <div className='innerSlide'>
                       <Image className="image" src={"/assets/homeBanner4.jpg"} hasMasterSpinner={false} />
                       </div>
@@ -156,9 +154,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               </div>
               <div className="container">
                   <Slider>
-                    {articles.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0, 5).map((item: IArticle) => {
+                    {articles.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0, 5).map((item: IArticle, i: number) => {
                       return (
-                        <Slide className="slide" index={0}>
+                        <Slide key={i} className="slide" index={0}>
                           <a href={`/articles/${item.pathname}`} className='innerSlide1'>
                             <Image className="image1" src={item.photo} hasMasterSpinner={false} />
                             <p>{item.title}</p>
@@ -174,9 +172,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
         <div className='gridItem'>
           <div className='headerText'>Popular reads</div>
           <div className='reads'>
-            {articles.sort((a: { comments: string },b: { comments: string }) => b.comments.length - a.comments.length).slice(0, 10).map((item: IArticle) => {
+            {articles.sort((a: { comments: string },b: { comments: string }) => b.comments.length - a.comments.length).slice(0, 10).map((item: IArticle, i: number) => {
               return (
-                <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className='readsItem'>
+                <div key={i} style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className='readsItem'>
                   <a href={`/articles/${item.pathname}`}>
                     <img alt='a' src={item.photo} />
                   </a>
@@ -219,7 +217,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <Slider>
                     {reviews?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(5, 9).map((item: IReview, index: number) => {
                         return (
-                          <Slide className="slide" index={index}>
+                          <Slide key={index} className="slide" index={index}>
                             <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='innerSlide2'>
                               <div className='relative'>
                               <a href={`/reviews/${item.pathname}`}>
@@ -279,7 +277,7 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <Slider>
                     {articles?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(5, 9).map((item: IReview, index: number) => {
                         return (
-                          <Slide className="slide" index={index}>
+                          <Slide key={index} className="slide" index={index}>
                             <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='innerSlide2'>
                               <div className='relative'>
                               <a href={`/articles/${item.pathname}`}>
@@ -333,9 +331,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 <div className="container">
                     <Slider>
                       {
-                        categories.slice(1, 7).map((item: ICategory) => {
+                        categories.slice(1, 7).map((item: ICategory, i: number) => {
                           return (
-                            <Slide className="slide" index={0}>
+                            <Slide key={i} className="slide" index={0}>
                               <a href={`/categories/${transformToUrl(item.title)}`} className='innerSlide3'>
                                 <Image className="image3" src={item.photo} hasMasterSpinner={false}/>
                                 <p>{item.title}</p>
@@ -356,9 +354,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               <div  className='moviesInnerFlex'>
                 <div className='moviesheaderText'>Netflix</div>
                   {
-                    series?.slice(9, 12).map((item: ISerie) => {
+                    series?.slice(9, 12).map((item: ISerie, i: number) => {
                       return (
-                        <div className='moviesInnerFlexItem'>
+                        <div key={i} className='moviesInnerFlexItem'>
                           <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='moviesItem'>
                             <a href={`./${item.type}/${item.pathname}`}>
                               <img alt='a' src={item.photo} />
@@ -381,9 +379,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               <div className='moviesInnerFlex'>
                 <div className='moviesheaderText'>Amazon Prime</div>
                 {
-                  movies?.slice(9, 12).map((item: IMovie) => {
+                  movies?.slice(9, 12).map((item: IMovie, i: number) => {
                     return (
-                      <div className='moviesInnerFlexItem'>
+                      <div key={i} className='moviesInnerFlexItem'>
                         <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='moviesItem'>
                           <a href={`./${item.type}/${item.pathname}`}>
                             <img alt='a' src={item.photo} />
@@ -406,9 +404,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               <div className='moviesInnerFlex'>
                 <div className='moviesheaderText'>Crunchyroll</div>
                 {
-                  mangas?.slice(9, 12).map((item: IManga) => {
+                  mangas?.slice(9, 12).map((item: IManga, i: number) => {
                     return (
-                      <div className='moviesInnerFlexItem'>
+                      <div key={i} className='moviesInnerFlexItem'>
                         <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='moviesItem'>
                           <a href={`./${item.type}/${item.pathname}`}>
                             <img alt='a' src={item.photo} />
@@ -457,9 +455,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <div className="container">
                       <Slider>
                         {
-                          movies?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: IMovie) => {
+                          movies?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: IMovie, i: number) => {
                             return (
-                              <Slide className="slide" index={0}>
+                              <Slide key={i} className="slide" index={0}>
                                 <div className='innerSlide4'>
                                   <a className="image4" href={`./${item.type}/${item.pathname}`}>
                                     <Image className="image4" src={item.photo} hasMasterSpinner={false}/>
@@ -509,9 +507,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <div className="container">
                       <Slider>
                       {
-                        series?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: ISerie) => {
+                        series?.sort((a: { createdAt: number; },b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: ISerie, i: number) => {
                           return (
-                            <Slide className="slide" index={0}>
+                            <Slide key={i} className="slide" index={0}>
                               <div className='innerSlide4'>
                                 <a className="image4" href={`./${item.type}/${item.pathname}`}>
                                   <Image className="image4" src={item.photo} hasMasterSpinner={false}/>
@@ -562,9 +560,9 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                   <div className="container">
                       <Slider>
                       {
-                        mangas?.sort((a: { createdAt: number; }, b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: IManga) => {
+                        mangas?.sort((a: { createdAt: number; }, b: { createdAt: number; }) => b.createdAt - a.createdAt).slice(0,9).map((item: IManga, i: number) => {
                           return (
-                            <Slide className="slide" index={0}>
+                            <Slide key={i} className="slide" index={0}>
                               <div className='innerSlide4'>
                                 <a className="image4" href={`./${item.type}/${item.pathname}`}>
                                   <Image className="image4" src={item.photo} hasMasterSpinner={false}/>
@@ -591,16 +589,16 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
           <div className='gridItem'>
             <div className='moviesFlex'>
               {
-                genres?.slice(11,14)?.map((item: IGenre) => {
+                genres?.slice(11,14)?.map((item: IGenre, i: number) => {
                   return (
-                    <>
+                    <React.Fragment key={i}>
                       <div className='moviesInnerFlex'>
                         <div className='moviesheaderText'>{item.title}</div>
                         {
-                        mangas?.map((man: IManga) => man.genre?.map((gen: IGenre) => {
+                        mangas?.map((man: IManga) => man.genre?.map((gen: IGenre, index: number) => {
                           if(gen.title === item.title) {
                             return (
-                              <div className='moviesInnerFlexItem'>
+                              <div key={index} className='moviesInnerFlexItem'>
                                 <div style={darkMode ? {"backgroundColor": "#323232"} : {}} className='moviesItem'>
                                   <a href={`./${man.type}/${man.pathname}`}>
                                     <img alt='a' src={man.photo} />
@@ -621,14 +619,14 @@ const Home: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         )
                         }
                       </div>
-                    </>
+                    </React.Fragment>
                   )
                 })
               }
             </div> 
           </div>  
       </div>
-  </>
+  </React.Fragment>
   )
 };
 

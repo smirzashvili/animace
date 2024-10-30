@@ -45,9 +45,9 @@ const Reviews = () => {
         <h1 className={styles.title}>Editor Reviews</h1>
         <div className={styles.line}></div>
         <div className={styles.grid}>
-          {reviews.map((item: IReview) => {
+          {reviews.map((item: IReview, i: number) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={i} className={styles.gridItem}>
                 <div className={styles.relative}> 
                   <a href={`./reviews/${item.pathname}`}>
                     <img alt='a' src={item.photo} />
@@ -59,17 +59,17 @@ const Reviews = () => {
                   <div><a href={`./reviews/${item.pathname}`} className={styles.gridTitle}>{item.title}</a></div>
                   <div className={styles.link}><a href={`authors/${transformToUrl(item.author?.fullname)}`} className={styles.gridAuthor}>{item.author?.fullname}</a></div>
                   <div className={styles.buttons}>
-                    {item.category.map(item => {return(
-                      <a href={`../categories/${transformToUrl(item.title)}`}>
+                    {item.category.map((item, i: number) => {return(
+                      <a key={i} href={`../categories/${transformToUrl(item.title)}`}>
                           <button>{item.title}</button>
                       </a>
                     )})}
                   </div>
                   <div className={styles.buttons}>
-                    {item.tag.map(item => {
+                    {item.tag.map((item, i: number) => {
                       if(!item.type)
                       return(
-                      <a href={`../tags/${transformToUrl(item.title)}`}>
+                      <a key={i} href={`../tags/${transformToUrl(item.title)}`}>
                           <button>{item.title}</button>
                       </a>
                     )})}

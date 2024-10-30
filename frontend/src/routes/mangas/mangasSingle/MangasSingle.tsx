@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
 import styles from "./styles.module.css";
-import { RiStarLine } from "react-icons/ri";
-import { RiStarFill } from "react-icons/ri";
 import { RiFacebookFill } from 'react-icons/ri';
 import { FaPinterestP, FaTelegramPlane } from "react-icons/fa"
 import { AiOutlineWhatsApp } from "react-icons/ai"
@@ -85,8 +83,8 @@ const MangasSingle: React.FC<{darkMode: boolean}> = ({ darkMode }) => {
                 <div className={styles.gridItem}>
                     <div className={styles.genres}>
                     {
-                    mangaInfo.genre?.map((item: IGenre) => {
-                        return <a href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
+                    mangaInfo.genre?.map((item: IGenre, i: number) => {
+                        return <a key={i} href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
                     })
                     }
                     </div>
@@ -189,9 +187,9 @@ const MangasSingle: React.FC<{darkMode: boolean}> = ({ darkMode }) => {
                         <div className={styles.ratingEntriesHeader}>Rating Entries</div>
                         <div className={styles.line1}></div>
                         {reviews?.filter((item: IReview) => item.about === mangaInfo.title).length > 0 ?
-                        reviews?.filter((item: IReview) => item.about === mangaInfo.title).map((item1: IReview) => {
+                        reviews?.filter((item: IReview) => item.about === mangaInfo.title).map((item1: IReview, i: number) => {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     <div className={styles.ratingAndDateArea}>
                                         <div className={styles.ratingAndDateAreaStars}>
                                             <Rating rating={item1.rating} size="medium" />
@@ -210,7 +208,7 @@ const MangasSingle: React.FC<{darkMode: boolean}> = ({ darkMode }) => {
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><img alt='a' src={item1.author.avatar} /></a>
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><div>{item1.author.fullname}</div></a>
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })
                         :

@@ -47,7 +47,7 @@ const Articles = () => {
         <div className={styles.grid}>
           {articles?.map((item: IArticle, key: string) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={key} className={styles.gridItem}>
                 <a href={`articles/${item.pathname}`}>
                   <img alt='a' src={item.photo} />
                 </a>
@@ -56,17 +56,17 @@ const Articles = () => {
                   <div><a href={`articles/${item.pathname}`} className={styles.gridTitle}>{item.title}</a></div>
                   <div className={styles.link}><a href={`authors/${transformToUrl(item.author.fullname)}`} className={styles.gridAuthor}>{item.author.fullname}</a></div>
                   <div className={styles.buttons}>
-                    {item.category.map((item: ICategory) => {return(
-                      <a href={`../categories/${transformToUrl(item.title)}`}>
+                    {item.category.map((item: ICategory, i: number) => {return(
+                      <a key={i} href={`../categories/${transformToUrl(item.title)}`}>
                           <button>{item.title}</button>
                       </a>
                     )})}
                   </div>
                   <div className={styles.buttons}>
-                    {item.tag.map((item: ITag) => {
+                    {item.tag.map((item: ITag, i: number) => {
                       if(!item.type)
                       return(
-                      <a href={`../tags/${transformToUrl(item.title)}`}>
+                      <a key={i} href={`../tags/${transformToUrl(item.title)}`}>
                           <button>{item.title}</button>
                       </a>
                     )})}

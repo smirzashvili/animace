@@ -87,9 +87,9 @@ const ActorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 </div>
                 {buttonActive["Known For"] ?
                 <div className={styles.grid}>
-                    {knownFor?.map(item => {
+                    {knownFor?.map((item, i: number) => {
                         return (
-                            <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.gridItem}>
+                            <div key={i} style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.gridItem}>
                                 <a href={`../../${item.type}/${item.pathname}`}>
                                     <img className={styles.gridItemImage} alt='a' src={item.photo} />
                                 </a>
@@ -98,9 +98,9 @@ const ActorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                         <div className={styles.gridItemHeader}>{item.title}</div>
                                     </a>
                                     <div className={styles.gridItemSaber}>
-                                        {item.actors.map((el: IActor) => {
+                                        {item.actors.map((el: IActor, i: number) => {
                                             if(el.fullName === actorInfo.fullName) {
-                                                return <div>{el.role}</div>
+                                                return <div key={i}>{el.role}</div>
                                             }
                                         })}
                                     </div>
@@ -113,11 +113,11 @@ const ActorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 : buttonActive["Bio"] ?
                 <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={actorInfo.bio ? styles.bio : ""}>
                     {
-                        actorInfo.bio?.split('\n').map((item: string) => {
+                        actorInfo.bio?.split('\n').map((item: string, i: number) => {
                             if(item === "") {
-                                return <br/>
+                                return <br key={i}/>
                             } else {
-                                return <p>{item}</p>
+                                return <p key={i}>{item}</p>
                             }
                         })
                     }
@@ -128,9 +128,9 @@ const ActorsSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         news?.length > 0 ? 
                         <div className={styles.newsGrid}>
                         {    
-                            news?.map((item: IArticle) => {
+                            news?.map((item: IArticle, i: number) => {
                                 return ( 
-                                    <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.newsGridItem}>
+                                    <div key={i} style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.newsGridItem}>
                                         <a href={`../../${item.type}/${item.pathname}`}>
                                             <img alt="a" src={item.photo} />
                                         </a>

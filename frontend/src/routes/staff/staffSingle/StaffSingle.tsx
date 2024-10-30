@@ -87,9 +87,9 @@ const StaffSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 </div>
                 {buttonActive["Known For"] ?
                 <div className={styles.grid}>
-                    {knownFor?.map((item: IMovie | IManga | ISerie) => {
+                    {knownFor?.map((item: IMovie | IManga | ISerie, i: number) => {
                         return (
-                            <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.gridItem}>
+                            <div key={i} style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.gridItem}>
                                 <a href={`../../${item.type}/${item.pathname}`}>
                                     <img className={styles.gridItemImage} alt='a' src={item.photo} />
                                 </a>
@@ -98,9 +98,9 @@ const StaffSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                                         <div className={styles.gridItemHeader}>{item.title}</div>
                                     </a>
                                     <div className={styles.gridItemSaber}>
-                                        {(item as IMovie).staff.map((stf: IStaff) => {
+                                        {(item as IMovie).staff.map((stf: IStaff, i: number) => {
                                             if(stf.staff.fullName === staffInfo.fullName) {
-                                                return <div>{stf.role}</div>
+                                                return <div key={i}>{stf.role}</div>
                                             }
                                         })}
                                     </div>
@@ -113,11 +113,11 @@ const StaffSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                 : buttonActive["Bio"] ?
                 <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={staffInfo.bio ? styles.bio : ""}>
                     {
-                        staffInfo.bio?.split('\n').map((item: string) => {
+                        staffInfo.bio?.split('\n').map((item: string, i: number) => {
                             if(item === "") {
-                                return <br/>
+                                return <br key={i}/>
                             } else {
-                                return <p>{item}</p>
+                                return <p key={i}>{item}</p>
                             }
                         })
                     }
@@ -128,9 +128,9 @@ const StaffSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
                         news?.length > 0 ? 
                         <div className={styles.newsGrid}>
                         {    
-                            news?.map((item: IArticle) => {
+                            news?.map((item: IArticle, i: number) => {
                                 return ( 
-                                    <div style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.newsGridItem}>
+                                    <div key={i} style={darkMode ? {backgroundColor: "#3e3e3e"} : {}} className={styles.newsGridItem}>
                                         <a href={`../../${item.type}/${item.pathname}`}>
                                             <img alt="a" src={item.photo} />
                                         </a>

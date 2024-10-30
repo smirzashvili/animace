@@ -105,7 +105,7 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               {
                 reviewInfo.text?.substring(1).split('\n').map((item: string,index: number) => {
                   if(reviewInfo.text?.split('\n')[index] === reviewInfo.text?.split('\n')[index-1]) {
-                    return <iframe className={styles.articleVideo} title='title' src={reviewInfo.video} ></iframe>
+                    return <iframe key={index} className={styles.articleVideo} title='title' src={reviewInfo.video} ></iframe>
                   }
                   if(item === "") {
                     return <br key={index}/>
@@ -124,19 +124,19 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
             <div className={styles.inThisPost}>In this post:</div>
             <div className={styles.inThisPostButtons}>
               {
-                reviewInfo.category?.map((item: ICategory) => {
+                reviewInfo.category?.map((item: ICategory, i: number) => {
                   return (
-                    <a href={`../categories/${transformToUrl(item.title)}`}>
+                    <a key={i} href={`../categories/${transformToUrl(item.title)}`}>
                       <button>{item.title}</button>
                     </a>
                   )
                 })
               }
               {
-                reviewInfo.tag?.map((item: IReview) => {
+                reviewInfo.tag?.map((item: IReview, i: number) => {
                   if(item.type) {
                     return (
-                      <a href={`../${item.type}/${transformToUrl(item.title)}`}>
+                      <a key={i} href={`../${item.type}/${transformToUrl(item.title)}`}>
                         <button>{item.title}</button>
                       </a>
                     )
@@ -153,9 +153,9 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
             <Comments darkMode={darkMode} info={reviewInfo} />
             <div className={styles.line}></div>
             <div className={styles.sameGrid}>
-              {reviews.filter((item: IReview) => item._id !== reviewInfo._id).slice(0, 8).map((item: IReview) => {
+              {reviews.filter((item: IReview) => item._id !== reviewInfo._id).slice(0, 8).map((item: IReview, i: number) => {
                 return (
-                  <div className={styles.sameGridItem}>
+                  <div key={i} className={styles.sameGridItem}>
                     <a href={`./${item.pathname}`}>
                       <img alt='a' src={item.photo} />
                     </a>

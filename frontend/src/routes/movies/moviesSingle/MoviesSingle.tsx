@@ -134,8 +134,8 @@ if(notFound === true) {
                 <div className={styles.gridItem}>
                     <div className={styles.genres}>
                     <div className={styles.genresId}>{movieInfo.mpaa}</div>
-                        {movieInfo.genre?.map((item: IGenre) => {
-                            return <a href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
+                        {movieInfo.genre?.map((item: IGenre, i: number) => {
+                            return <a key={i} href={`../../genres/${transformToUrl(item.title)}`}><button>{item.title}</button></a>
                         })}
                     </div>
                     <table style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.features}>
@@ -179,12 +179,12 @@ if(notFound === true) {
                                 </div>
                                 <img className={styles.modalPhoto} alt='a' src={movieInfo.subphoto} />
                                 {
-                                movieInfo.fullStory?.split('\n').map((item: string) => {
+                                movieInfo.fullStory?.split('\n').map((item: string, i: number) => {
                                     if(item === "") {
-                                        return <br/>
+                                        return <br key={i}/>
                                     } 
                                     else {
-                                        return <p className={styles.modalText}>{item}</p>
+                                        return <p key={i} className={styles.modalText}>{item}</p>
                                     }
                                 })
                                 }
@@ -197,9 +197,9 @@ if(notFound === true) {
                             <div className={styles.staffAndCastHeader}>Staff</div>
                             <div className={styles.line1}></div>
                             {
-                                movieInfo.staff?.map((item:IStaff) => {
+                                movieInfo.staff?.map((item:IStaff, i: number) => {
                                     return (
-                                        <div className={styles.singleStaffAndCast}>
+                                        <div key={i} className={styles.singleStaffAndCast}>
                                             <a href={`../../staff/${transformToUrl(item?.staff.fullName)}`}>
                                                 <img alt='a' src={item?.staff.photo}/>
                                             </a>
@@ -207,8 +207,8 @@ if(notFound === true) {
                                                 <a href={`../../staff/${transformToUrl(item?.staff.fullName)}`}>
                                                     <div>{item?.staff.fullName}</div>
                                                 </a>
-                                                {item.role.split('&').map((item:string) => {
-                                                    return <div className={styles.role}>{item}</div>
+                                                {item.role.split('&').map((item:string, i: number) => {
+                                                    return <div key={i} className={styles.role}>{item}</div>
                                                 })}
                                             </div>
                                         </div>
@@ -222,9 +222,9 @@ if(notFound === true) {
                             <div className={styles.staffAndCastHeader}>Cast</div>
                             <div className={styles.line1}></div>
                             {
-                                movieInfo.actors?.map((item: IActor) => {
+                                movieInfo.actors?.map((item: IActor, i: number) => {
                                     return (
-                                        <div className={styles.singleStaffAndCast}>
+                                        <div key={i} className={styles.singleStaffAndCast}>
                                             <a href={`../../actors/${transformToUrl(item?.actor.fullName)}`}>
                                                 <img alt='a' src={item?.actor.photo}/>
                                             </a>
@@ -232,8 +232,8 @@ if(notFound === true) {
                                                 <a href={`../../actors/${transformToUrl(item?.actor.fullName)}`}>
                                                     <div>{item?.actor.fullName}</div>
                                                 </a>
-                                                {item.role.split('&').map((item:string) => {
-                                                    return <div className={styles.role}>{item}</div>
+                                                {item.role.split('&').map((item:string, i: number) => {
+                                                    return <div key={i} className={styles.role}>{item}</div>
                                                 })}
                                             </div>
                                         </div>
@@ -247,9 +247,9 @@ if(notFound === true) {
                         <div className={styles.line1}></div>
                         <div className={styles.relatedMediaItems}>
                             {
-                                relatedMedia.map((item: IManga | IMovie | ISerie) => {
+                                relatedMedia.map((item: IManga | IMovie | ISerie, i: number) => {
                                     return (
-                                        <div style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
+                                        <div key={i} style={darkMode ? {background: "#3e3e3e"} : {}} className={styles.relatedMediaItem}>
                                             {console.log(item.type, item.pathname)}
                                             <a href={`../../${item.type}/${item.pathname}`}>
                                                 <img alt='a' src={item.photo}/>
@@ -281,9 +281,9 @@ if(notFound === true) {
                         <div className={styles.relatedMediaHeader}>Rating Entries</div>
                         <div className={styles.line1}></div>
                         {reviews?.filter((item: IReview) => item.about === movieInfo.title).length > 0 ?
-                        reviews?.filter((item: IReview) => item.about === movieInfo.title).map((item1: IReview) => {
+                        reviews?.filter((item: IReview) => item.about === movieInfo.title).map((item1: IReview, i: number) => {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     <div className={styles.ratingAndDateArea}>
                                         <div className={styles.ratingAndDateAreaStars}>
                                             <Rating rating={item1.rating} size="medium" />
@@ -303,7 +303,7 @@ if(notFound === true) {
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><img alt='a' src={item1.author.avatar} /></a>
                                         <a href={`../../authors/${transformToUrl(item1.author.fullname)}`}><div>{item1.author.fullname}</div></a>
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })
                         :
@@ -320,9 +320,9 @@ if(notFound === true) {
                         </div>
                     </div>
                     {
-                        relatedPosts.map((item: IArticle) => {
+                        relatedPosts.map((item: IArticle, i: number) => {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     <a href={`../../articles/${item.pathname}`}>
                                         <img className={styles.relatedPostsImg} alt='a' src={item?.photo} />
                                     </a>
@@ -339,7 +339,7 @@ if(notFound === true) {
                                             <div>{item?.author?.fullname}</div>
                                         </a>
                                     </div>
-                                </>
+                                </React.Fragment>
                             )
                         })
                     }

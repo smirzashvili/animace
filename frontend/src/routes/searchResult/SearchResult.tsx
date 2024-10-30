@@ -50,10 +50,10 @@ const SearchResult = () => {
                         <h1 className={styles.title}>Search results for <span>{keyword}</span></h1>
                         <div className={styles.line}></div>
                         <div className={styles.grid}>
-                            {(data as any)?.slice(pageNumber * PAGE_SIZE, (pageNumber + 1) * PAGE_SIZE).map((item: IArticle | IReview | IManga | IMovie | ISerie) => {
+                            {(data as any)?.slice(pageNumber * PAGE_SIZE, (pageNumber + 1) * PAGE_SIZE).map((item: IArticle | IReview | IManga | IMovie | ISerie, i: number) => {
                                 if(item.type === "reviews" || item.type === "articles") {
                                 return (
-                                    <div className={styles.gridItem}>
+                                    <div key={i} className={styles.gridItem}>
                                         <div className={styles.relative} >
                                             <a href={`../${item.type}/${item.pathname}`}>
                                                 <img  alt='a' src={item.photo} />
@@ -65,15 +65,15 @@ const SearchResult = () => {
                                             <div><a href={`../${item.type}/${item.pathname}`} className={styles.gridTitle}>{item.title}</a></div>
                                             <div className={styles.link}><a href={`authors/${transformToUrl((item as IArticle).author.fullname)}`} className={styles.gridAuthor}>{(item as IArticle).author.fullname}</a></div>
                                             <div className={styles.buttons}>
-                                            {(item as IArticle).category?.map(item => {return(
-                                                        <a href={`../categories/${transformToUrl(item.title)}`}>
+                                            {(item as IArticle).category?.map((item, i: number) => {return(
+                                                        <a key={i} href={`../categories/${transformToUrl(item.title)}`}>
                                                             <button>{item.title}</button>
                                                         </a>
                                             )})}
                                             </div>
                                             <div className={styles.buttons}>
-                                            {(item as IArticle).tag?.map(item => {return(
-                                                <a href={`../tags/${transformToUrl(item.title)}`}>
+                                            {(item as IArticle).tag?.map((item, i: number) => {return(
+                                                <a key={i} href={`../tags/${transformToUrl(item.title)}`}>
                                                     <button>{item.title}</button>
                                                 </a>
                                             )})}

@@ -35,25 +35,25 @@ const Actors = () => {
         <div className={styles.filterButtons}>
         <button className={activeButton === "#" ? styles.activeButton : ""} onClick={(e) => handleFilterActors(e, "#")}>#</button>
             {
-            alphabetState?.map(letter => {
+            alphabetState?.map((letter, i: number) => {
                 return (
-                    <button className={activeButton === letter ? styles.activeButton : ""} onClick={(e) => handleFilterActors(e, letter)}>{letter}</button>
+                    <button key={i} className={activeButton === letter ? styles.activeButton : ""} onClick={(e) => handleFilterActors(e, letter)}>{letter}</button>
                 )
             })
             }
         </div>
         {
-            alphabetState?.map(letter => {
+            alphabetState?.map((letter, i: number) => {
                 return (
-                    <div className={activeButton === letter || activeButton === "#" || activeButton === "" ? styles.animation : styles.animation1}>
+                    <div key={i} className={activeButton === letter || activeButton === "#" || activeButton === "" ? styles.animation : styles.animation1}>
                         <div className={styles.letter}>{letter}</div>
                         <div className={styles.line}></div>
                         <div className={styles.grid}>
                             {
-                            actors?.map((item: IActor) => {
+                            actors?.map((item: IActor, i: number) => {
                                 if(item.fullName.charAt(0) === letter) {
                                     return (
-                                        <div className={styles.gridItem}>
+                                        <div key={i} className={styles.gridItem}>
                                             <a href={`/actors/${transformToUrl(item.fullName)}`}>
                                                 <img alt='a' src={item.photo} />
                                             </a>

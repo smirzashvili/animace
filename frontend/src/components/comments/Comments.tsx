@@ -114,9 +114,10 @@ const Comments: React.FC<{darkMode: boolean, info: IReview | IArticle }> = ({dar
             <div className={styles.commentsArea}>
             <div className={styles.CommentsHeader}>{info.comments?.length} comments</div>
             {
-            info.comments?.map((item: IComment) => {
+            info.comments?.map((item: IComment, i: number) => {
                 return (
                     <div 
+                    key={i}
                     style={{"marginLeft": item.index * 40 + "px"}} 
                     className={`${styles.Comment} ${item.index > 0 ? styles.isReply : ''}`}
                     >

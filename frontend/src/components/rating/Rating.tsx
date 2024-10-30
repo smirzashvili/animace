@@ -10,16 +10,16 @@ const Rating: React.FC<{rating: number, size?: string}> = ({rating, size}) => {
             [...Array(5)].map((item, index) => {
                 if(rating < index + 1) {
                   if(rating - index === 0.5) {
-                    return <RiStarHalfLine/>
+                    return <RiStarHalfLine key={index}/>
                   } else {
                     return (
-                      <RiStarLine/>
+                      <RiStarLine key={index}/>
                     )
                   }
                 } 
                 else {
                   return (
-                    <RiStarFill/>
+                    <RiStarFill key={index}/>
                   )
                 }
             })

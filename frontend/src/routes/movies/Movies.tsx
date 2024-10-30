@@ -44,9 +44,9 @@ const Movies = () => {
         <h1 className={styles.title}>Movies</h1>
         <div className={styles.line}></div>
         <div className={styles.grid}>
-          {movies?.map((item: IMovie) => {
+          {movies?.map((item: IMovie, i: number) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={i} className={styles.gridItem}>
                 <a href={`movies/${item.pathname}`}>
                   <img alt='a' src={item.photo} />
                 </a>

@@ -43,9 +43,9 @@ const Mangas = () => {
         <h1 className={styles.title}>Mangas</h1>
         <div className={styles.line}></div>
         <div className={styles.grid}>
-          {mangas?.map((item:IManga) => {
+          {mangas?.map((item:IManga, i: number) => {
             return (
-              <div className={styles.gridItem}>
+              <div key={i} className={styles.gridItem}>
                 <a href={`mangas/${item.pathname}`}>
                   <img alt='a' src={item.photo} />
                 </a>

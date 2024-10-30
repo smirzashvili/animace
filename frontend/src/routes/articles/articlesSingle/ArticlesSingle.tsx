@@ -121,7 +121,7 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               {
                 articleInfo.text?.substring(1).split('\n').map((item: string, index: number) => {
                   if(articleInfo.text?.split('\n')[index] === articleInfo.text?.split('\n')[index-1]) {
-                    return <iframe className={styles.articleVideo} title='title' src={articleInfo.video} ></iframe>
+                    return <iframe key={index} className={styles.articleVideo} title='title' src={articleInfo.video} ></iframe>
                   }
                   if(item === "") {
                     return <br key={index}/>
@@ -137,19 +137,19 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
             <div className={styles.inThisPost}>In this post:</div>
             <div className={styles.inThisPostButtons}>
               {
-                articleInfo.category?.map((item: ICategory) => {
+                articleInfo.category?.map((item: ICategory, i: number) => {
                   return (
-                    <a href={`../categories/${transformToUrl(item.title)}`}>
+                    <a key={i} href={`../categories/${transformToUrl(item.title)}`}>
                       <button>{item.title}</button>
                     </a>
                   )
                 })
               }
               {
-                articleInfo.tag?.map((item: IArticle) => {
+                articleInfo.tag?.map((item: IArticle, i: number) => {
                   if(item.type) {
                     return (
-                      <a href={`../${item.type}/${transformToUrl(item.title)}`}>
+                      <a key={i} href={`../${item.type}/${transformToUrl(item.title)}`}>
                         <button>{item.title}</button>
                       </a>
                     )
@@ -167,9 +167,9 @@ const ArticlesSingle: React.FC<{darkMode: boolean}> = ({darkMode}) => {
               <Comments darkMode={darkMode} info={articleInfo}/>
             <div className={styles.line}></div>
             <div className={styles.sameGrid}>
-              {articles.filter((item: IArticle) => item._id !== articleInfo._id).slice(0, 8).map((item: IArticle) => {
+              {articles.filter((item: IArticle) => item._id !== articleInfo._id).slice(0, 8).map((item: IArticle, i: number) => {
                 return (
-                  <div className={styles.sameGridItem}>
+                  <div key={i} className={styles.sameGridItem}>
                     <a href={`./${item.pathname}`}>
                       <img alt='a' src={item.photo} />
                     </a>
